@@ -5,6 +5,7 @@ using JetBrains.Annotations;
 using Unity.VisualScripting;
 using UnityEngine.Windows;
 using TMPro;
+using UnityEditor.Experimental.GraphView;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -58,7 +59,10 @@ public class PlayerMovement : MonoBehaviour
             if (distance < grabRadius && distance < nearestDistance)
             {
                 //Debug.Log(distance + " " + grabRadius);
-                if (obj.gameObject != grabbedObj)
+                if (hasObject && obj.gameObject.GetComponent<CarryableObj>()) 
+                {
+                    
+                } else if (obj.gameObject != grabbedObj)
                 {
                     nearestObject = item;
                     nearestDistance = distance;

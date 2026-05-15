@@ -4,21 +4,25 @@ using UnityEngine;
 public class CarryableObj : MonoBehaviour, IInteractable
 {
     public bool isHeld;
+    public bool onSlot;
     public GameObject captor;
     void GotInteracted(PlayerMovement player)
     {
         // if (!isHeld)
         //  {
-        if (!player.hasObject)
+        if (!onSlot)
         {
-            if (captor != null)
+            if (!player.hasObject)
             {
-                captor.GetComponent<ObjectSlot>()?.LetGo();
-                captor.GetComponent<PlayerMovement>()?.DropObject();
-            }
+                if (captor != null)
+                {
+                    captor.GetComponent<ObjectSlot>()?.LetGo();
+                    captor.GetComponent<PlayerMovement>()?.DropObject();
+                }
 
-            player.GrabObject(this.gameObject);
-            captor = player.gameObject;
+                player.GrabObject(this.gameObject);
+                captor = player.gameObject;
+            }
         }
             
       //  }

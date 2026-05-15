@@ -3,28 +3,60 @@ using UnityEngine;
 public class ObjectSlot : MonoBehaviour, IInteractable
 {
     [SerializeField] Transform objPoint;
-    public GameObject heldObj;
+    public GameObject maleFish, femaleFish;
     private bool hasObj;
+    public Biome tankBiome;
 
    void ReceiveObject(PlayerMovement player)
     {
         if (player.hasObject)
         {
-            heldObj = player.grabbedObj;
-            hasObj = true;
-            player.grabbedObj = null;
-            player.hasObject = false;
-            heldObj.transform.parent = objPoint;
-            heldObj.transform.position = objPoint.position;
-            heldObj.GetComponent<CarryableObj>().captor = this.gameObject;
+            
+            var data = player.grabbedObj.GetComponent<Fish>()?.fishData;
+            if (tankBiome == data.biome || tankBiome == Biome.none)
+            {
+                tankBiome = data.biome;
+                switch (data.gender)
+                {
+                    case Gender.M:
+                        maleFish = player.grabbedObj;                      
+                        player.grabbedObj = null;
+                        player.hasObject = false;
+                        maleFish.transform.parent = objPoint;
+                        maleFish.transform.position = objPoint.position;                      
+                        maleFish.GetComponent<CarryableObj>().captor = this.gameObject;
+                        break;
+                    case Gender.F:
+                        femaleFish = player.grabbedObj;
+                        player.grabbedObj = null;
+                        player.hasObject = false;
+                        femaleFish.transform.parent = objPoint;
+                        femaleFish.transform.position = objPoint.position;                       
+                        femaleFish.GetComponent<CarryableObj>().captor = this.gameObject;
+                        break;
+
+                }
+                if (maleFish != null && femaleFish != null)
+                {
+                    maleFish.GetComponent<CarryableObj>().onSlot = true;
+                    femaleFish.GetComponent<CarryableObj>().onSlot = true;
+                    hasObj = true;
+                }
+
+            }
         }
     }
 
     public void LetGo()
     {
-        if (heldObj != null)
+        if (maleFish != null && femaleFish == null)
         {
-            heldObj = null;
+            maleFish = null;
+            hasObj = false;
+        }
+        else if (maleFish == null && femaleFish != null)
+        {
+            femaleFish = null;
             hasObj = false;
         }
         
