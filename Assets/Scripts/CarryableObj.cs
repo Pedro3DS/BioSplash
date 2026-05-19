@@ -16,8 +16,9 @@ public class CarryableObj : MonoBehaviour, IInteractable
             {
                 if (captor != null)
                 {
-                    captor.GetComponent<ObjectSlot>()?.LetGo();
+                    captor.GetComponent<ObjectSlot>()?.LetGo(this.gameObject);
                     captor.GetComponent<PlayerMovement>()?.DropObject();
+                    captor.GetComponent<FishGenerator>()?.LetSpawnGo();
                 }
 
                 player.GrabObject(this.gameObject);

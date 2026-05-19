@@ -10,4 +10,5 @@ public class Fishdata : ScriptableObject
   public string fishName;
     public Gender gender;
     public Biome biome;
+    public Mesh mesh;
 }

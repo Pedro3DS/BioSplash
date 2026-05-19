@@ -268,3 +268,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fishData: {fileID: 11400000, guid: 791423b8285d87f45836c7c09cfe00a9, type: 2}
   infoCanvas: {fileID: 4175132163276414996}
+  fishMesh: {fileID: 4392580520389842540}

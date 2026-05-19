@@ -15,3 +15,4 @@ MonoBehaviour:
   fishName: breF
   gender: 1
   biome: 1
+  mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}

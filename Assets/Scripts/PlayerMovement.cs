@@ -59,17 +59,21 @@ public class PlayerMovement : MonoBehaviour
             if (distance < grabRadius && distance < nearestDistance)
             {
                 //Debug.Log(distance + " " + grabRadius);
-                if (hasObject && obj.gameObject.GetComponent<CarryableObj>()) 
+                if (!hasObject && obj.gameObject.GetComponent<ObjectSlot>())
                 {
-                    
-                } else if (obj.gameObject != grabbedObj)
+
+                }
+               else if (hasObject && obj.gameObject.GetComponent<CarryableObj>())
+                {
+                }
+                else if (obj.gameObject != grabbedObj)
                 {
                     nearestObject = item;
                     nearestDistance = distance;
                 }
             }
         }
-       // Debug.Log(nearestObject);
+       Debug.Log(nearestObject);
         return nearestObject;
     }
 

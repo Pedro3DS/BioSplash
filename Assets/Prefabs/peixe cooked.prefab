@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2614981852285292722}
-  - component: {fileID: 8385244803821454772}
   m_Layer: 0
   m_Name: GrabPoint
   m_TagString: Untagged
@@ -32,27 +31,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 3422802187578096657}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &8385244803821454772
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2667200831433971600}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Radius: 0.7
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &2885264785282751482
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -63,7 +41,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: f1158b4b0e954984a84e84749470d18f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.2950597
+      value: 9.89
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f1158b4b0e954984a84e84749470d18f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -71,7 +49,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f1158b4b0e954984a84e84749470d18f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.16
+      value: -6.16
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f1158b4b0e954984a84e84749470d18f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -166,7 +144,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   turningSpeed: 0.1
-  grabRadius: 1
+  grabRadius: 1.6
   grabPoint: {fileID: 2614981852285292722}
   grabbedObj: {fileID: 0}
   hasObject: 0
@@ -295,6 +273,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 9caa3d8a-6b2f-4e8e-8bad-6ede561bd9be
     m_ActionName: UI/TrackedDeviceOrientation
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 4c8a76fd-1929-4298-85db-f0b3ed8d4431
+    m_ActionName: 'Player/Join[/Keyboard/anyKey]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Keyboard&Mouse
   m_DefaultActionMap: Player

@@ -6,11 +6,14 @@ public class Fish : MonoBehaviour
     private  GameObject genderImage;
 
     [SerializeField] private GameObject infoCanvas;
+    [SerializeField] private MeshFilter fishMesh;
 
-    private void Start()
+    public void Begin(Fishdata data)
     {
+        fishData = data;
         Debug.Log((int)fishData.gender);
       genderImage =  Instantiate(SpriteManager.instance.genderSprites[((int)fishData.gender)], infoCanvas.transform);
+        fishMesh.mesh = fishData.mesh;
     }
 
     private void Update()
