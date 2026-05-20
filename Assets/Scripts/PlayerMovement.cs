@@ -61,7 +61,11 @@ public class PlayerMovement : MonoBehaviour
                 //Debug.Log(distance + " " + grabRadius);
                 if (!hasObject && obj.gameObject.GetComponent<ObjectSlot>())
                 {
-
+                  if (obj.gameObject.GetComponent<ObjectSlot>().fishReady)
+                    {
+                        nearestObject = item;
+                        nearestDistance = distance;
+                    }
                 }
                else if (hasObject && obj.gameObject.GetComponent<CarryableObj>())
                 {

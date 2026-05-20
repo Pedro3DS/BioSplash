@@ -5,8 +5,10 @@ public class SpriteManager : MonoBehaviour
 {
     public static SpriteManager instance;
 
-    public List<GameObject> genderSprites;
+    public List<GameObject> genderPrefabs;
+    public List<Sprite> genderSprites;
     public List<GameObject> biomeSprites;
+    public List<GameObject> registerPrefabs;
 
     private void Awake()
     {

@@ -12,7 +12,7 @@ public class TimerSystem : MonoBehaviour
 
     public static event Action onTimeZero;
 
-    [SerializeField] private Text _timerOnScreen;
+    [SerializeField] private TextMeshProUGUI _timerOnScreen;
 
     [Tooltip("Coloque o tempo em segundos")]
     public float maxTime;

@@ -3,12 +3,15 @@ using NUnit.Framework;
 using UnityEngine;
 
 public enum Gender { M, F }
-public enum Biome {none, bioma1, bioma2, bioma3, bioma4 }
+public enum FishType {none, tipo1, tipo2, tipo3, tipo4 }
 [CreateAssetMenu(fileName = "Fishdata", menuName = "Scriptable Objects/Fishdata")]
 public class Fishdata : ScriptableObject
 {
   public string fishName;
+    public string scientificName;
+    public string description;
     public Gender gender;
-    public Biome biome;
+    public FishType type;
+    public Sprite fishImage;
     public Mesh mesh;
 }

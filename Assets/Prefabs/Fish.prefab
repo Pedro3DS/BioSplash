@@ -141,7 +141,7 @@ GameObject:
   - component: {fileID: 8069634282720728114}
   - component: {fileID: 5443148701402732893}
   m_Layer: 0
-  m_Name: Object
+  m_Name: Fish
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -267,5 +267,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fishData: {fileID: 11400000, guid: 791423b8285d87f45836c7c09cfe00a9, type: 2}
+  registered: 0
+  baseScore: 5
+  freshnessLeeway: 15
+  mult: 0.75
   infoCanvas: {fileID: 4175132163276414996}
   fishMesh: {fileID: 4392580520389842540}
