@@ -13,6 +13,9 @@ MonoBehaviour:
   m_Name: Fishdata 2
   m_EditorClassIdentifier: 
   fishName: bF
+  scientificName: 
+  description: 
   gender: 1
-  biome: 2
-  mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+  type: 2
+  fishImage: {fileID: 0}
+  MeshPrefab: {fileID: 919132149155446097, guid: 2310a62826c699744b20a93deda0bad6, type: 3}

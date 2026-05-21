@@ -58,22 +58,33 @@ public class PlayerMovement : MonoBehaviour
             float distance = Vector3.Distance(grabPoint.position, obj.transform.position);
             if (distance < grabRadius && distance < nearestDistance)
             {
-                //Debug.Log(distance + " " + grabRadius);
-                if (!hasObject && obj.gameObject.GetComponent<ObjectSlot>())
+
+                if (obj.GetComponent<CarryableObj>())
                 {
-                  if (obj.gameObject.GetComponent<ObjectSlot>().fishReady)
+                    if (!hasObject && !obj.gameObject.GetComponent<CarryableObj>().isHeld)
                     {
                         nearestObject = item;
                         nearestDistance = distance;
                     }
                 }
-               else if (hasObject && obj.gameObject.GetComponent<CarryableObj>())
+                else if (obj.GetComponent<ObjectSlot>())
                 {
-                }
-                else if (obj.gameObject != grabbedObj)
+                    if(obj.gameObject.GetComponent<ObjectSlot>().fishReady)
+                    {
+                        nearestObject = item;
+                        nearestDistance = distance;
+                    } else if(hasObject)
+                    {
+                        nearestObject = item;
+                        nearestDistance = distance;
+                    }
+                } else if (obj.GetComponent<ComputerSystem>())
                 {
-                    nearestObject = item;
-                    nearestDistance = distance;
+                    if (hasObject)
+                    {
+                        nearestObject = item;
+                        nearestDistance = distance;
+                    }
                 }
             }
         }

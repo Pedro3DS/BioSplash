@@ -8,8 +8,6 @@ public class CarryableObj : MonoBehaviour, IInteractable
     public GameObject captor;
     void GotInteracted(PlayerMovement player)
     {
-        // if (!isHeld)
-        //  {
         if (!onSlot)
         {
             if (!player.hasObject)
@@ -26,7 +24,6 @@ public class CarryableObj : MonoBehaviour, IInteractable
             }
         }
             
-      //  }
     }
 
     public void Interact(PlayerMovement player) => GotInteracted(player);

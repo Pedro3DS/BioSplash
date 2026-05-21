@@ -37,8 +37,8 @@ public class ObjectSlot : MonoBehaviour, IInteractable
             if (slider.value == slider.maxValue)
             {
                 fishReady = true;
-                femaleFish.gameObject.GetComponent<CarryableObj>().enabled = false;
-                maleFish.gameObject.GetComponent<CarryableObj>().enabled = false;
+                femaleFish.gameObject.GetComponent<CarryableObj>().isHeld = true;
+                maleFish.gameObject.GetComponent<CarryableObj>().isHeld = true;
             }
         }
     }

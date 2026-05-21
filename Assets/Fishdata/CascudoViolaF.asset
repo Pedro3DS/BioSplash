@@ -10,9 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a82f033becb96b84d90e410712127b8c, type: 3}
-  m_Name: Fishdata
+  m_Name: CascudoViolaF
   m_EditorClassIdentifier: 
-  fishName: breM
-  gender: 0
-  biome: 1
-  mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+  fishName: Cascudo-Viola
+  scientificName: 
+  description: 
+  gender: 1
+  type: 1
+  fishImage: {fileID: 0}
+  MeshPrefab: {fileID: 919132149155446097, guid: 0ae7fc18265aa6b44af4ddf6f031489b, type: 3}

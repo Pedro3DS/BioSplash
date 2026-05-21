@@ -14,7 +14,6 @@ public class Fish : MonoBehaviour
     public bool resting;
 
     [SerializeField] private GameObject infoCanvas;
-    [SerializeField] private MeshFilter fishMesh;
 
     public void Begin(Fishdata data)
     {
@@ -22,7 +21,8 @@ public class Fish : MonoBehaviour
         Debug.Log((int)fishData.type);
       genderImage =  Instantiate(SpriteManager.instance.genderPrefabs[((int)fishData.gender)], infoCanvas.transform);
         registImage = Instantiate(SpriteManager.instance.registerPrefabs[0], infoCanvas.transform);
-        fishMesh.mesh = fishData.mesh;
+       GameObject fishMesh = Instantiate(data.MeshPrefab, this.gameObject.transform);
+        fishMesh.transform.position = this.gameObject.transform.position;
         timer = freshnessLeeway;
     }
 
