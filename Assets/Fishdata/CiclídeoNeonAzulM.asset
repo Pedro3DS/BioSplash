@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a82f033becb96b84d90e410712127b8c, type: 3}
-  m_Name: CascudoViolaM
+  m_Name: "Cicl\xEDdeoNeonAzulM"
   m_EditorClassIdentifier: 
-  fishName: Cascudo-Viola
-  scientificName: loricaria coximensis
-  description: Ocorre no rio Coxim
+  fishName: "Cicl\xEDdeo Neon Azul"
+  scientificName: Paracyprichromis nigripinnis
+  description: "Ocorre na \xC1frica, end\xEAmico do lago Tanganyika"
   gender: 0
-  type: 1
-  fishImage: {fileID: 21300000, guid: 4ac433de48cd07545b45d25d2d8fc5d7, type: 3}
-  MeshPrefab: {fileID: 919132149155446097, guid: 0ae7fc18265aa6b44af4ddf6f031489b, type: 3}
+  type: 6
+  fishImage: {fileID: 21300000, guid: c9067af9df4c34349986b9b873aabb68, type: 3}
+  MeshPrefab: {fileID: 919132149155446097, guid: 5ca7084be67baa24bb53a0afb055d4b2, type: 3}

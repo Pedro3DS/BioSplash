@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a82f033becb96b84d90e410712127b8c, type: 3}
-  m_Name: CascudoViolaM
+  m_Name: CascudoTigreOuroM
   m_EditorClassIdentifier: 
-  fishName: Cascudo-Viola
-  scientificName: loricaria coximensis
-  description: Ocorre no rio Coxim
+  fishName: Cascudo Tigre Ouro
+  scientificName: Peckoltia compta
+  description: "Ocorre na bacia do rio Tapaj\xF3s"
   gender: 0
-  type: 1
-  fishImage: {fileID: 21300000, guid: 4ac433de48cd07545b45d25d2d8fc5d7, type: 3}
-  MeshPrefab: {fileID: 919132149155446097, guid: 0ae7fc18265aa6b44af4ddf6f031489b, type: 3}
+  type: 5
+  fishImage: {fileID: 21300000, guid: cdccad2ed64315947a79bbbc1ecbc5ec, type: 3}
+  MeshPrefab: {fileID: 919132149155446097, guid: 62ed287f780629746b9a90c9e08f7086, type: 3}

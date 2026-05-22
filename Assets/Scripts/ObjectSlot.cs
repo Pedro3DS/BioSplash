@@ -123,6 +123,7 @@ public class ObjectSlot : MonoBehaviour, IInteractable
             slider.value = slider.minValue;
             sliderTimerrr = slider.minValue;
             fishReady = false;
+            tankBiome = FishType.none;
         }
     }
 
@@ -152,7 +153,10 @@ public class ObjectSlot : MonoBehaviour, IInteractable
                 femaleFish = null;                
             }
         }
-        
+        if(maleFish == null && femaleFish == null)
+        {
+            tankBiome = FishType.none;
+        }
 
     }
     public void Interact(PlayerMovement player) => ReceiveObject(player);

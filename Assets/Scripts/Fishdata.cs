@@ -3,7 +3,7 @@ using NUnit.Framework;
 using UnityEngine;
 
 public enum Gender { M, F }
-public enum FishType {none, CascudoViola, tipo2, tipo3, tipo4 }
+public enum FishType {none, CascudoViola, Acari, Bagre, CascudoOnca, CascudoTigreOuro, CiclidioAzul, Dourado, Piranha, ArraiaXingu, TetraCego }
 [CreateAssetMenu(fileName = "Fishdata", menuName = "Scriptable Objects/Fishdata")]
 public class Fishdata : ScriptableObject
 {

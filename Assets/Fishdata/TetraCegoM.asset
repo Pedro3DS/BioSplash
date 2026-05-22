@@ -10,12 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a82f033becb96b84d90e410712127b8c, type: 3}
-  m_Name: Fishdata 3
+  m_Name: TetraCegoM
   m_EditorClassIdentifier: 
-  fishName: bM
-  scientificName: 
-  description: 
+  fishName: Tetra Cego
+  scientificName: Astyanax jordani
+  description: "Nativo do M\xE9xico, encontrado habitando nas profundezas de cavernas
+    naturais"
   gender: 0
-  type: 2
-  fishImage: {fileID: 0}
-  MeshPrefab: {fileID: 919132149155446097, guid: 2310a62826c699744b20a93deda0bad6, type: 3}
+  type: 10
+  fishImage: {fileID: 21300000, guid: cc4184020e9b7a44ba466e66f01de6d1, type: 3}
+  MeshPrefab: {fileID: 919132149155446097, guid: d220a0e08f05a93419926f42d9d49086, type: 3}
