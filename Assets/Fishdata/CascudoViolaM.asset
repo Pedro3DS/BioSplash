@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: CascudoViolaM
   m_EditorClassIdentifier: 
   fishName: Cascudo-Viola
-  scientificName: loricaria coximensis
+  scientificName: Loricaria coximensis
   description: Ocorre no rio Coxim
   gender: 0
   type: 1

@@ -2327,7 +2327,7 @@ MonoBehaviour:
   m_fontSize: 26
   m_fontSizeBase: 26
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 0
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -4425,7 +4425,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2446352380068489566, guid: ad6ad78af6d93824fabc4ad990c3f167, type: 3}
       propertyPath: m_enableAutoSizing
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2502597158060646524, guid: ad6ad78af6d93824fabc4ad990c3f167, type: 3}
       propertyPath: m_IsActive
