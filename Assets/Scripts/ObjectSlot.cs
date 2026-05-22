@@ -14,6 +14,7 @@ public class ObjectSlot : MonoBehaviour, IInteractable
     private float sliderTimerrr;
     public float sliderTime;
     public bool fishReady;
+    [SerializeField] AudioSource audioSource;
 
     private void Start()
     {
@@ -108,6 +109,7 @@ public class ObjectSlot : MonoBehaviour, IInteractable
                                     femaleFish.GetComponent<Fish>().resting = true;
                                 }
                             }
+                            audioSource.Play();
                         }
                     }
                 }

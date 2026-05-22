@@ -12,6 +12,7 @@ public class ComputerSystem : MonoBehaviour, IInteractable
     [SerializeField] TextMeshProUGUI biomes;
     [SerializeField] Image fishGender;
     [SerializeField] Image fishPicture;
+    [SerializeField] AudioSource audioSource;
 
 
 
@@ -29,6 +30,7 @@ public class ComputerSystem : MonoBehaviour, IInteractable
     private IEnumerator ImageWait(PlayerMovement player)
     {
         fishCanvas.SetActive(true);
+        audioSource.Play();
         var data = player.grabbedObj.GetComponent<Fish>()?.fishData;
         fishName.text = data.fishName;
         scienceName.text = data.scientificName;

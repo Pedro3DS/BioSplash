@@ -6,6 +6,7 @@ public class CarryableObj : MonoBehaviour, IInteractable
     public bool isHeld;
     public bool onSlot;
     public GameObject captor;
+    [SerializeField] AudioSource audioSource;
     void GotInteracted(PlayerMovement player)
     {
         if (!onSlot)
@@ -21,6 +22,7 @@ public class CarryableObj : MonoBehaviour, IInteractable
 
                 player.GrabObject(this.gameObject);
                 captor = player.gameObject;
+                audioSource.Play();
             }
         }
             
