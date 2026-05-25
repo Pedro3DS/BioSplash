@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a82f033becb96b84d90e410712127b8c, type: 3}
   m_Name: AcariM
   m_EditorClassIdentifier: 
+  ID: 1
   fishName: Cascudo
   scientificName: Baryancistrus niveatus
   description: "Ocorre nas bacias do rio Xingu, Tapaj\xF3s, rio Trombetas e rio Tocantins"

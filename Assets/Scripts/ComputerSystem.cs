@@ -13,12 +13,13 @@ public class ComputerSystem : MonoBehaviour, IInteractable
     [SerializeField] Image fishGender;
     [SerializeField] Image fishPicture;
     [SerializeField] AudioSource audioSource;
+    private bool isBusy;
 
 
 
     public void IdentifyFish(PlayerMovement player)
     {
-        if (player.hasObject)
+        if (player.hasObject && !isBusy)
         {
             StartCoroutine(ImageWait(player));
         }
@@ -29,6 +30,8 @@ public class ComputerSystem : MonoBehaviour, IInteractable
 
     private IEnumerator ImageWait(PlayerMovement player)
     {
+        isBusy = true;
+        player.movementDisabled = true;
         fishCanvas.SetActive(true);
         audioSource.Play();
         var data = player.grabbedObj.GetComponent<Fish>()?.fishData;
@@ -39,7 +42,10 @@ public class ComputerSystem : MonoBehaviour, IInteractable
         fishPicture.sprite = data.fishImage;
         player.grabbedObj.GetComponent<Fish>().Register();
         yield return new WaitForSeconds(2);
+        player.movementDisabled = false;
+        yield return new WaitForSeconds(3);
         fishCanvas.SetActive(false);
+        isBusy = false;
         
     }
 

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a82f033becb96b84d90e410712127b8c, type: 3}
   m_Name: CascudoTroglobioF
   m_EditorClassIdentifier: 
+  ID: 8
   fishName: Cascudinho-de-caverna
   scientificName: Ancistrus cryptophthalmus
   description: "Ocorre na bacia do rio S\xE3o Vicente perto de Caverna Passa Tr\xEAs"

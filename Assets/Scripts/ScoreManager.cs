@@ -25,13 +25,19 @@ public class ScoreManager : MonoBehaviour
         scoreText.text = score.ToString();
     }
 
-    public void AddScore(Fish fish1, Fish fish2)
+    public int CalculateScore(Fish fish1, Fish fish2)
     {
         float mult = fish1.mult + fish2.mult;
         Debug.Log(mult);
         int basePoints = fish1.baseScore + fish2.baseScore;
-        int added =  Mathf.RoundToInt(basePoints * mult);
-        score += added;
+        int added = Mathf.RoundToInt(basePoints * mult);
+        return added;
+    }
+
+    public void AddScore(int value)
+    {
+        
+        score += value;
         scoreText.text = score.ToString();
     }
 }

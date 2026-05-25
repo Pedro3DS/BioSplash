@@ -5,7 +5,8 @@ using UnityEngine.UI;
 public class ObjectSlot : MonoBehaviour, IInteractable
 {
     [SerializeField] Transform objPoint, subPoint1, subPoint2;
-    [SerializeField] Slider slider;   
+    [SerializeField] Slider slider;
+    [SerializeField] GameObject boxPrefab;
     public GameObject maleFish, femaleFish;
     public bool hasObj;
     public bool isReproduct;
@@ -116,7 +117,20 @@ public class ObjectSlot : MonoBehaviour, IInteractable
             }
         } else
         {
-            ScoreManager.instance.AddScore(maleFish.GetComponent<Fish>(), femaleFish.GetComponent<Fish>());
+            Fishdata maleData = maleFish.GetComponent<Fish>().fishData;
+            Fishdata femaleData = femaleFish.GetComponent<Fish>().fishData;
+
+
+            GameObject box = Instantiate(boxPrefab);
+            FishBox fishBox = box.GetComponent<FishBox>();
+            CarryableObj carryableObj = box.GetComponent<CarryableObj>();
+            fishBox.type = maleData.type;
+            fishBox.scoreValue = ScoreManager.instance.CalculateScore(maleFish.GetComponent<Fish>(), femaleFish.GetComponent<Fish>());
+            player.GetComponent<PlayerMovement>().GrabObject(box);
+            FishManager.instance.fishCount[maleData.ID]--;
+            FishManager.instance.fishCount[femaleData.ID]--;
+
+
             Destroy(maleFish);
             maleFish = null;
             Destroy(femaleFish);

@@ -104,12 +104,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8048ecf7d19b6444cb6ed1322484f6a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 7
   turningSpeed: 0.1
   grabRadius: 2
   grabPoint: {fileID: 3439602732486666223}
   grabbedObj: {fileID: 0}
   hasObject: 0
+  movementDisabled: 0
 --- !u!114 &291427886276476071
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -26,12 +26,17 @@ public class FishGenerator : MonoBehaviour
                 }
                 else
                 {
-                    GameObject obj = Instantiate(fishPrefab, spawnPoint);
-                    obj.transform.position = spawnPoint.position;
-                    currentFish = obj.GetComponent<CarryableObj>();
-                    currentFish.gameObject.GetComponent<Fish>().Begin(possibleFish[Random.Range(0,possibleFish.Count)]);
-                    currentFish.captor = this.gameObject;
-                    hasFish = true;
+                    Fishdata data = possibleFish[Random.Range(0, possibleFish.Count)];
+                    if (FishManager.instance.fishCount[data.ID] < 1)
+                    {
+                        GameObject obj = Instantiate(fishPrefab, spawnPoint);
+                        obj.transform.position = spawnPoint.position;
+                        currentFish = obj.GetComponent<CarryableObj>();                 
+                        currentFish.gameObject.GetComponent<Fish>().Begin(data);
+                        currentFish.captor = this.gameObject;
+                        hasFish = true;
+                        FishManager.instance.fishCount[data.ID]++;
+                    }
                 }
             }
         } else

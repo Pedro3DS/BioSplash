@@ -7,6 +7,7 @@ public enum FishType {none, CascudoViola, Acari, Bagre, CascudoOnca, CascudoTrog
 [CreateAssetMenu(fileName = "Fishdata", menuName = "Scriptable Objects/Fishdata")]
 public class Fishdata : ScriptableObject
 {
+    public int ID;
   public string fishName;
     public string scientificName;
     public string description;

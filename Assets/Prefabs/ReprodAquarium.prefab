@@ -526,6 +526,7 @@ MonoBehaviour:
   subPoint1: {fileID: 1894366845344090994}
   subPoint2: {fileID: 2710531367619468913}
   slider: {fileID: 960963112869349556}
+  boxPrefab: {fileID: 365766159734128829, guid: 542460da65fe03b4aa43eacafabe0281, type: 3}
   maleFish: {fileID: 0}
   femaleFish: {fileID: 0}
   hasObj: 0

@@ -7,7 +7,6 @@ public class SpriteManager : MonoBehaviour
 
     public List<GameObject> genderPrefabs;
     public List<Sprite> genderSprites;
-    public List<GameObject> biomeSprites;
     public List<GameObject> registerPrefabs;
 
     private void Awake()

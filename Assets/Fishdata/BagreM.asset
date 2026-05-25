@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a82f033becb96b84d90e410712127b8c, type: 3}
   m_Name: BagreM
   m_EditorClassIdentifier: 
+  ID: 5
   fishName: "Acari-On\xE7a"
   scientificName: Peckoltia compta
   description: "Ocorre na bacia de Tapaj\xF3s"

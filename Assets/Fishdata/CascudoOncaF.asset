@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a82f033becb96b84d90e410712127b8c, type: 3}
   m_Name: CascudoOncaF
   m_EditorClassIdentifier: 
+  ID: 6
   fishName: "Cascudo-On\xE7a"
   scientificName: Leporacanthicus joselimai
   description: "Encontrado na bacia do rio Tapaj\xF3s"

@@ -5,7 +5,6 @@ using JetBrains.Annotations;
 using Unity.VisualScripting;
 using UnityEngine.Windows;
 using TMPro;
-using UnityEditor.Experimental.GraphView;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -17,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
     CharacterController charC;
     public GameObject grabbedObj;
     public bool hasObject;
+    public bool movementDisabled;
 
     void Start()
     {
@@ -36,12 +36,18 @@ public class PlayerMovement : MonoBehaviour
     }
     void Update()
     {
-        Vector3 fixedMovement = new Vector3(movement.x, 0, movement.y);
-        charC.Move(fixedMovement * speed * Time.deltaTime);
-        if (fixedMovement != Vector3.zero){
-        float angle = Mathf.Atan2(fixedMovement.x, fixedMovement.z) * Mathf.Rad2Deg;
-        Quaternion newRot = Quaternion.AngleAxis(angle, Vector3.up);
-		transform.rotation = Quaternion.Lerp(transform.rotation, newRot, turningSpeed);
+        if (!movementDisabled)
+        {
+
+
+            Vector3 fixedMovement = new Vector3(movement.x, 0, movement.y);
+            charC.Move(fixedMovement * speed * Time.deltaTime);
+            if (fixedMovement != Vector3.zero)
+            {
+                float angle = Mathf.Atan2(fixedMovement.x, fixedMovement.z) * Mathf.Rad2Deg;
+                Quaternion newRot = Quaternion.AngleAxis(angle, Vector3.up);
+                transform.rotation = Quaternion.Lerp(transform.rotation, newRot, turningSpeed);
+            }
         }
     }
 
@@ -69,18 +75,28 @@ public class PlayerMovement : MonoBehaviour
                 }
                 else if (obj.GetComponent<ObjectSlot>())
                 {
-                    if(obj.gameObject.GetComponent<ObjectSlot>().fishReady)
-                    {
-                        nearestObject = item;
-                        nearestDistance = distance;
-                    } else if(hasObject)
+                    if (obj.gameObject.GetComponent<ObjectSlot>().fishReady && !hasObject)
                     {
                         nearestObject = item;
                         nearestDistance = distance;
                     }
-                } else if (obj.GetComponent<ComputerSystem>())
+                    else if (hasObject && obj.gameObject.GetComponent<ObjectSlot>().fishReady == false)
+                    {
+                        nearestObject = item;
+                        nearestDistance = distance;
+                    }
+                }
+                else if (obj.GetComponent<ComputerSystem>())
                 {
                     if (hasObject)
+                    {
+                        nearestObject = item;
+                        nearestDistance = distance;
+                    }
+                }
+                else if (obj.GetComponent<DeliverySlot>())
+                {
+                    if (hasObject && grabbedObj.GetComponent<FishBox>())
                     {
                         nearestObject = item;
                         nearestDistance = distance;
