@@ -9,7 +9,6 @@ using UnityEngine.SceneManagement;
 public class MenuManager : MonoBehaviour
 {
     public PlayerInputManager playerManager;
-    public string cenaStart;
     private bool roomFull = false;
     public GameObject roadBlock;
     public EventSystem pe1, pe2;
@@ -31,11 +30,8 @@ public class MenuManager : MonoBehaviour
             Buttons.SetActive(true);
             pe1.SetSelectedGameObject(pe1.firstSelectedGameObject);
             pe2.SetSelectedGameObject(pe2.firstSelectedGameObject);
+            PlayerManager.Instance?.FindPlayers();
         }
-    }
-    public void ChangeScene()
-    {
-        SceneManager.LoadScene(cenaStart);
     }
     public void Close()
     {
@@ -49,6 +45,5 @@ public class MenuManager : MonoBehaviour
     public void NavigationJump(GameObject gameObject)
     {
         pe1.SetSelectedGameObject(gameObject);
-        pe2.SetSelectedGameObject(gameObject);
     }
 }

@@ -12,6 +12,7 @@ public class OrderSystem : MonoBehaviour
     public List<Fishdata> ordersFish;
     public List<FishType> currentOrders;
     public List<GameObject> objectOrders;
+    public bool ordersComplete;
 
     private void Awake()
     {

@@ -1,12 +1,12 @@
 using TMPro;
-using UnityEditor.SceneManagement;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ScoreManager : MonoBehaviour
 {
     public static ScoreManager instance;
 
-   [SerializeField] TextMeshProUGUI scoreText;
+    [SerializeField] TextMeshProUGUI scoreText, loseScoreText, winScoreText, hiScoreText;
     int score = 0;
 
     private void Awake()
@@ -19,6 +19,11 @@ public class ScoreManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    private void OnEnable()
+    {
+        TimerSystem.onTimeZero += FinalScore;
     }
     private void Start()
     {
@@ -39,5 +44,16 @@ public class ScoreManager : MonoBehaviour
         
         score += value;
         scoreText.text = score.ToString();
+    }
+
+    public void FinalScore()
+    {
+        loseScoreText.text = "Pontuação: " + score.ToString();
+        winScoreText.text = "Pontuação: " + score.ToString();
+        if (score > PlayerPrefs.GetInt(SceneManager.GetActiveScene().name + "hiscore"))
+        {
+            PlayerPrefs.SetInt(SceneManager.GetActiveScene().name + "hiscore", score);
+        }
+        hiScoreText.text = "Mais alta: " + PlayerPrefs.GetInt(SceneManager.GetActiveScene().name + "hiscore").ToString();
     }
 }

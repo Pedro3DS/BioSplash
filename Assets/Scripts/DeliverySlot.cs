@@ -19,6 +19,11 @@ public class DeliverySlot : MonoBehaviour, IInteractable
                     OrderSystem.instance.currentOrders.RemoveAt(i);
                     Destroy(OrderSystem.instance.objectOrders[i]);
                     OrderSystem.instance.objectOrders.RemoveAt(i);
+                    if(OrderSystem.instance.currentOrders.Count == 0)
+                    {
+                        Debug.Log("Tudo completo");
+                        OrderSystem.instance.ordersComplete = true;
+                    }
                 }
             }
         }

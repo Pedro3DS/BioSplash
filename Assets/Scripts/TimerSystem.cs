@@ -9,10 +9,15 @@ using UnityEngine.UI;
 public class TimerSystem : MonoBehaviour
 {
     public static TimerSystem instance;
+    public delegate void PlayerDelegate();
+    public static PlayerDelegate playerDelegate;
 
-    public static event Action onTimeZero;
+    public delegate void OnTimeZero();
+    public static OnTimeZero onTimeZero;
 
     [SerializeField] private TextMeshProUGUI _timerOnScreen;
+    [SerializeField] private TextMeshProUGUI StartText;
+    [SerializeField] private TextMeshProUGUI EndText;
 
     [Tooltip("Coloque o tempo em segundos")]
     public float maxTime;
@@ -25,7 +30,10 @@ public class TimerSystem : MonoBehaviour
 
     public bool isActive = false;
 
-    private void Start()
+    public GameObject StartCanvas, WinScreen, EndTextCanvas, EndScreen;
+
+
+    private void Awake()
     {
         if (instance == null)
         {
@@ -35,22 +43,40 @@ public class TimerSystem : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    private void Start()
+    {
+        if(GameObject.FindGameObjectsWithTag("Player").Length == 2)
+        {
+            isActive = true;
+            Begin();
+        }
+    }
+    public void Begin()
+    {
+
 
         if (isActive)
         {
-            isGameplayOn = true;
 
             if (maxTime <= 0f)
             {
                 maxTime = 300f;
             }
 
-            StartCoroutine(Timer());
+            StartCanvas.SetActive(true);
         }
+    }
+    private void End()
+    {
+        EndTextCanvas.SetActive(true);
+
     }
 
     IEnumerator Timer()
     {
+        _timerOnScreen.gameObject.SetActive(true);
         while (isGameplayOn)
         {
             _timer += Time.deltaTime;
@@ -60,9 +86,8 @@ public class TimerSystem : MonoBehaviour
             yield return null;
         }
 
-        _remainingTime = maxTime - _timer;
-
-        //onTimeZero?.Invoke();        
+        End();
+        onTimeZero?.Invoke();        
     }
 
     private string FixText(float s)
@@ -82,4 +107,35 @@ public class TimerSystem : MonoBehaviour
             return $"{_min:00}:{_seg:00}";
         }
     }
+
+    public void StartSegment(int i )
+    {
+        switch (i)
+        { 
+            case 0:
+                StartText.text = "Já!";
+                break;
+            case 1:
+                StartCanvas.SetActive(false);
+                isGameplayOn = true;
+                StartCoroutine(Timer());
+                playerDelegate?.Invoke();
+                break;
+        }
+    }
+    public void EndSegment() 
+    {
+        EndTextCanvas.SetActive(false);
+        if (OrderSystem.instance.ordersComplete)
+        {
+            WinScreen.SetActive(true);
+            PlayerManager.Instance.ITooCanMakeNavigationJumps(WinScreen.GetComponentInChildren<Button>().gameObject);
+
+        } else
+        {
+            EndScreen.SetActive(true);
+            PlayerManager.Instance.ITooCanMakeNavigationJumps(EndScreen.GetComponentInChildren<Button>().gameObject);
+        }
+    }
+
 }

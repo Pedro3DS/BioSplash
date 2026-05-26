@@ -16,10 +16,33 @@ public class PlayerMovement : MonoBehaviour
     CharacterController charC;
     public GameObject grabbedObj;
     public bool hasObject;
-    public bool movementDisabled;
+    public bool movementDisabled = true;
 
+
+    private void OnEnable()
+    {
+        TimerSystem.playerDelegate += EnableMovement;
+        TimerSystem.onTimeZero += DisableAll;
+    }
     void Start()
     {
+        if (PlayerManager.Instance != null)
+        {
+            if (GameObject.FindGameObjectsWithTag("Player").Length == 1)
+            {
+                PlayerManager.Instance.p1 = gameObject;
+            }
+            else
+            {
+                PlayerManager.Instance.p2 = gameObject;
+                PlayerManager.Instance.FindPlayers();
+                if (TimerSystem.instance != null)
+                {
+                    TimerSystem.instance.isActive = true;
+                    TimerSystem.instance.Begin();
+                }
+            }
+        }
         charC = GetComponent<CharacterController>();
     }
     public void OnMove(InputAction.CallbackContext context)
@@ -28,7 +51,7 @@ public class PlayerMovement : MonoBehaviour
     }
     public void OnInteract(InputAction.CallbackContext context)
     {
-        if (context.started)
+        if (context.started && !movementDisabled)
         {
                 IInteractable interactable = FindNearestObject<IInteractable>();
                 if (interactable != null) interactable.Interact(this);
@@ -123,5 +146,22 @@ public class PlayerMovement : MonoBehaviour
             grabbedObj = null;
             hasObject = false;
         }
+    }
+    public void EnableMovement()
+    {
+        movementDisabled = false;
+    }
+    public void DisableAll()
+    {
+        movementDisabled = true;
+
+        if (grabbedObj != null)
+        {
+            Destroy(grabbedObj);
+            grabbedObj = null;
+            hasObject = false;
+            
+        }
+        
     }
 }
