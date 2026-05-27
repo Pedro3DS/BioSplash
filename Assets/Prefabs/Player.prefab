@@ -105,7 +105,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 7
-  turningSpeed: 0.1
+  turningSpeed: 0.3
   grabRadius: 2
   grabPoint: {fileID: 3439602732486666223}
   grabbedObj: {fileID: 0}

@@ -57,7 +57,7 @@ public class PlayerMovement : MonoBehaviour
                 if (interactable != null) interactable.Interact(this);
         }
     }
-    void Update()
+    void FixedUpdate()
     {
         if (!movementDisabled)
         {
