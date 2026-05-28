@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a82f033becb96b84d90e410712127b8c, type: 3}
+  m_Name: TetraCegoF
+  m_EditorClassIdentifier: 
+  ID: 18
+  fishName: Tetra Cego
+  scientificName: Astyanax jordani
+  description: "Nativo do M\xE9xico, encontrado habitando nas profundezas de cavernas
+    naturais"
+  gender: 1
+  type: 10
+  fishImage: {fileID: 21300000, guid: cc4184020e9b7a44ba466e66f01de6d1, type: 3}
+  MeshPrefab: {fileID: 919132149155446097, guid: d220a0e08f05a93419926f42d9d49086, type: 3}

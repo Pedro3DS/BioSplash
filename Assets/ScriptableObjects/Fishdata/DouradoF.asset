@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a82f033becb96b84d90e410712127b8c, type: 3}
+  m_Name: DouradoF
+  m_EditorClassIdentifier: 
+  ID: 14
+  fishName: Dourado
+  scientificName: Salminus brasiliensis
+  description: Ocorre na Bacia do Prata, na bacia do Rio Magdalena e nos rios do
+    Peru da bacia do rio Amazonas.
+  gender: 1
+  type: 7
+  fishImage: {fileID: 21300000, guid: 3c025f8a161fabc49879ef9971d31b07, type: 3}
+  MeshPrefab: {fileID: 919132149155446097, guid: b4dbd30ab2c4ccb41bc6d3f72a4d84ca, type: 3}

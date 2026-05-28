@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a82f033becb96b84d90e410712127b8c, type: 3}
+  m_Name: "Cicl\xEDdeoNeonAzulF"
+  m_EditorClassIdentifier: 
+  ID: 12
+  fishName: "Cicl\xEDdeo Neon Azul"
+  scientificName: Paracyprichromis nigripinnis
+  description: "Ocorre na \xC1frica, end\xEAmico do lago Tanganyika"
+  gender: 1
+  type: 6
+  fishImage: {fileID: 21300000, guid: c9067af9df4c34349986b9b873aabb68, type: 3}
+  MeshPrefab: {fileID: 919132149155446097, guid: 5ca7084be67baa24bb53a0afb055d4b2, type: 3}

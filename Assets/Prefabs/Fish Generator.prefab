@@ -1,0 +1,180 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1809258817454634493
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5636826124677532755}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5636826124677532755
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1809258817454634493}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7553129627656064561}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7683670371354974401
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7553129627656064561}
+  - component: {fileID: 3108799325467517366}
+  - component: {fileID: 578199918209540212}
+  - component: {fileID: 1208327557044711101}
+  - component: {fileID: 6928339929271430533}
+  m_Layer: 0
+  m_Name: Fish Generator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7553129627656064561
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7683670371354974401}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.0621872, y: 0.6, z: -8.123}
+  m_LocalScale: {x: 0.5, y: 1, z: 0.5}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5636826124677532755}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &3108799325467517366
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7683670371354974401}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &578199918209540212
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7683670371354974401}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1208327557044711101
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7683670371354974401}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6928339929271430533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7683670371354974401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb79baa38fc27d9449f02a9b83aee419, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPoint: {fileID: 5636826124677532755}
+  fishPrefab: {fileID: 8994667791112211045, guid: 793d4eb7ee6c3a040ae66516e9a5ce08, type: 3}
+  possibleFish:
+  - {fileID: 11400000, guid: 820ffd352e72ff2499cb7e612a390559, type: 2}
+  - {fileID: 11400000, guid: 791423b8285d87f45836c7c09cfe00a9, type: 2}
+  - {fileID: 11400000, guid: 8b2a94ef3e1bc2e48bfe90a8f84c449c, type: 2}
+  - {fileID: 11400000, guid: 4087c8c3fb5cb9e44a9b2b721eb5be5c, type: 2}
+  - {fileID: 11400000, guid: d6b38cc55a274414c9249f8921998a0d, type: 2}
+  - {fileID: 11400000, guid: 39d192979d57f8640b246b35eb826cba, type: 2}
+  - {fileID: 11400000, guid: fd3ca31f4a5f82345a6a7ea8cc4d76ed, type: 2}
+  - {fileID: 11400000, guid: f384671b39af39b49bdd21cc160c5343, type: 2}
+  - {fileID: 11400000, guid: c3be4b1e2fdc36f4db5a6798c97336ac, type: 2}
+  - {fileID: 11400000, guid: 28fe9155dcc7ee041a6898842d189166, type: 2}
+  - {fileID: 11400000, guid: 5401ecd1411e861499149fd3443679be, type: 2}
+  - {fileID: 11400000, guid: 1c65364ba758fcd4ead4db52387b5ca0, type: 2}
+  - {fileID: 11400000, guid: de9cea0851df88544a3a4377055fa5fc, type: 2}
+  - {fileID: 11400000, guid: d137de9d16bc1e543b857149f4fb9612, type: 2}
+  - {fileID: 11400000, guid: a3da39e325388b14497573afa3493f97, type: 2}
+  - {fileID: 11400000, guid: 5c1de289129c297489d9d4d1e597e190, type: 2}
+  - {fileID: 11400000, guid: 155f508a9acb2ed48b75ecb9bd55d1d4, type: 2}
+  - {fileID: 11400000, guid: a59bffb5d82103a4d8fdb6bacdffc402, type: 2}
+  - {fileID: 11400000, guid: 6b8986fc39c98d44a8afcb583d61dabf, type: 2}
+  - {fileID: 11400000, guid: cf158dec9e370ee4890cb105f584c7cc, type: 2}
+  minTimer: 4
+  maxTimer: 7
