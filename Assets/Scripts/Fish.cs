@@ -1,3 +1,4 @@
+using System.Text.RegularExpressions;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -55,8 +56,19 @@ public class Fish : MonoBehaviour
 
     public void Register()
     {
-        registered = true;
-        Destroy(registImage);
-        registImage = Instantiate(SpriteManager.instance.registerPrefabs[1], infoCanvas.transform);
+        if (!registered)
+        {
+            registered = true;
+            Destroy(registImage);
+            registImage = Instantiate(SpriteManager.instance.registerPrefabs[1], infoCanvas.transform);
+            if (timer <= 0)
+            {
+                ScoreManager.instance.AddScore(1);
+            }
+            else
+            {
+                ScoreManager.instance.AddScore(2);
+            }
+        }
     }
 }
