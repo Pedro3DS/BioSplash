@@ -1,0 +1,164 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecf4bc94ec25d3946a7ba31273ea51a5, type: 3}
+  m_Name: AudioConfigurationMenu
+  m_EditorClassIdentifier: 
+  Audios:
+    _valueKeyPairList:
+    - Key: Music
+      Value:
+        AudioMixerGroup: {fileID: -6665460119565234226, guid: 0cefb3748ba55a54aa76b46c9bde0e41, type: 2}
+        PoolLenght: 2
+        Sounds:
+          _valueKeyPairList:
+          - Key: NoName1
+            Value:
+              Clip: {fileID: 8300000, guid: 15c142b658a2fae45bfcc3efab9b755f, type: 3}
+              Loop: 0
+              Priority: 0
+              Volume: 0.5
+              Pitch: 1
+              Pan: 0
+              MinDistance: 0
+              MaxDistance: 0
+          - Key: NoName2
+            Value:
+              Clip: {fileID: 8300000, guid: 26dd9607d23f28643889d638dfc7b139, type: 3}
+              Loop: 0
+              Priority: 0
+              Volume: 0.5
+              Pitch: 1
+              Pan: 0
+              MinDistance: 0
+              MaxDistance: 0
+          - Key: NoName3
+            Value:
+              Clip: {fileID: 8300000, guid: bb52840d564f04e459e385ab7940c7db, type: 3}
+              Loop: 0
+              Priority: 0
+              Volume: 0.5
+              Pitch: 1
+              Pan: 0
+              MinDistance: 0
+              MaxDistance: 0
+          - Key: NoName4
+            Value:
+              Clip: {fileID: 8300000, guid: 624482eb278b476468a9e2834ce99378, type: 3}
+              Loop: 0
+              Priority: 0
+              Volume: 0.5
+              Pitch: 1
+              Pan: 0
+              MinDistance: 0
+              MaxDistance: 0
+    - Key: SFX
+      Value:
+        AudioMixerGroup: {fileID: -3926276308457511099, guid: 0cefb3748ba55a54aa76b46c9bde0e41, type: 2}
+        PoolLenght: 4
+        Sounds:
+          _valueKeyPairList:
+          - Key: Tacada
+            Value:
+              Clip: {fileID: 8300000, guid: 62be74ccdef1c7c4db022b2d1e82d4ef, type: 3}
+              Loop: 0
+              Priority: 50
+              Volume: 1
+              Pitch: 1
+              Pan: 0
+              MinDistance: 0
+              MaxDistance: 0
+          - Key: GatePassed
+            Value:
+              Clip: {fileID: 8300000, guid: 9b1d8ad952b585d4dbc360e9521ff0f4, type: 3}
+              Loop: 0
+              Priority: 100
+              Volume: 0.8
+              Pitch: 1.2
+              Pan: 0
+              MinDistance: 0
+              MaxDistance: 0
+          - Key: OutBall
+            Value:
+              Clip: {fileID: 8300000, guid: 8a45c33a88757a249a4c9c05b64a88bc, type: 3}
+              Loop: 0
+              Priority: 0
+              Volume: 1
+              Pitch: 1
+              Pan: 0
+              MinDistance: 0
+              MaxDistance: 0
+          - Key: OpenTeam
+            Value:
+              Clip: {fileID: 8300000, guid: 667196833ada81a468d871aea968aabe, type: 3}
+              Loop: 0
+              Priority: 0
+              Volume: 1
+              Pitch: 1
+              Pan: 0
+              MinDistance: 0
+              MaxDistance: 0
+          - Key: CloseTeam
+            Value:
+              Clip: {fileID: 8300000, guid: ae6afab044905ca429da30c251534389, type: 3}
+              Loop: 0
+              Priority: 0
+              Volume: 1
+              Pitch: 1
+              Pan: 0
+              MinDistance: 0
+              MaxDistance: 0
+          - Key: Pause
+            Value:
+              Clip: {fileID: 8300000, guid: a4d8f848bbeff9e438b2e925465c3f25, type: 3}
+              Loop: 0
+              Priority: 0
+              Volume: 1
+              Pitch: 1
+              Pan: 0
+              MinDistance: 0
+              MaxDistance: 0
+          - Key: Touch
+            Value:
+              Clip: {fileID: 8300000, guid: 8ce348c340678204583c8cf81500105e, type: 3}
+              Loop: 0
+              Priority: 0
+              Volume: 1
+              Pitch: 1.3
+              Pan: 0
+              MinDistance: 0
+              MaxDistance: 5
+          - Key: ButtonSelected
+            Value:
+              Clip: {fileID: 8300000, guid: 62be74ccdef1c7c4db022b2d1e82d4ef, type: 3}
+              Loop: 0
+              Priority: 0
+              Volume: 1
+              Pitch: 1
+              Pan: 0
+              MinDistance: 0
+              MaxDistance: 0
+    - Key: Voice
+      Value:
+        AudioMixerGroup: {fileID: -7429954558812127354, guid: 0cefb3748ba55a54aa76b46c9bde0e41, type: 2}
+        PoolLenght: 2
+        Sounds:
+          _valueKeyPairList:
+          - Key: Perfect
+            Value:
+              Clip: {fileID: 8300000, guid: 6857d21efe1fdc242938155cd04a921c, type: 3}
+              Loop: 0
+              Priority: 0
+              Volume: 1
+              Pitch: 1
+              Pan: 0
+              MinDistance: 0
+              MaxDistance: 0
