@@ -88,7 +88,7 @@ Material:
     - _Enabled: 0
     - _HalftoneGradientSmoothness: 1
     - _HalftoneShadingEdge: 2.7
-    - _HalftoneTextureRotation: 45
+    - _HalftoneTextureRotation: 0
     - _LightingStrength: 0.99
     - _MainTextureTiling: 1
     - _Metallic: 0
@@ -115,8 +115,8 @@ Material:
     m_Colors:
     - _Emission: {r: 0, g: 0, b: 0, a: 0}
     - _HalftoneTextureScrollSpeed: {r: -0.05, g: -0.05, b: 0, a: 0}
-    - _HalftoneTextureTiling: {r: 40, g: 40, b: 0, a: 0}
-    - _MainColor: {r: 1, g: 0.18566526, b: 0.1490196, a: 1}
+    - _HalftoneTextureTiling: {r: 1, g: 1, b: 0, a: 0}
+    - _MainColor: {r: 1, g: 0.6854231, b: 0.1490196, a: 1}
     - _MainTextureOffset: {r: 0, g: 0, b: 0, a: 0}
     - _MainTextureTiling: {r: 1, g: 1, b: 0, a: 0}
     - _ScrollSpeed: {r: 0.1, g: 0.1, b: 0, a: 0}
