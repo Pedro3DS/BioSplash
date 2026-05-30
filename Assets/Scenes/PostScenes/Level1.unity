@@ -1333,7 +1333,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 5c6c51d4f0cf83547898bfc981d3f8c4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.26851615
+      value: 0.2840247
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5c6c51d4f0cf83547898bfc981d3f8c4, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1341,23 +1341,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5c6c51d4f0cf83547898bfc981d3f8c4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 7.19
+      value: 14.833695
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5c6c51d4f0cf83547898bfc981d3f8c4, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.044030216
+      value: 0.67914075
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5c6c51d4f0cf83547898bfc981d3f8c4, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.011486221
+      value: 0.17716849
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5c6c51d4f0cf83547898bfc981d3f8c4, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.96661454
+      value: 0.68923885
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5c6c51d4f0cf83547898bfc981d3f8c4, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.25216222
+      value: -0.1798028
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5c6c51d4f0cf83547898bfc981d3f8c4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1365,7 +1365,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5c6c51d4f0cf83547898bfc981d3f8c4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 185.216
+      value: 90.846
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5c6c51d4f0cf83547898bfc981d3f8c4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -7015,7 +7015,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 199.65
+  m_fontSize: 70.15
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
