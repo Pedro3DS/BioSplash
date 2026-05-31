@@ -12,7 +12,7 @@ public class IgnateMenuMusic : MonoBehaviour
 
     public void TransitionToGameMusic()
     {
-        AudioController.SoftAudioTransition("GameMusic",0.5f);
+        AudioController.SoftAudioTransition("GameMusic",2f);
     }
 
     // Update is called once per frame
