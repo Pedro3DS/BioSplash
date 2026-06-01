@@ -999,7 +999,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -1029,7 +1029,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 144361378}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 40302980}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 709470738}
+        m_TargetAssemblyTypeName: UnityEngine.EventSystems.EventSystem, UnityEngine.UI
+        m_MethodName: SetSelectedGameObject
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 627944581}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &144361378
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1482,7 +1506,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 27a5a340b0c1be24da8049eabef7364a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 612de772a52dd614da997ebbc4e5675d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2349,7 +2373,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 27a5a340b0c1be24da8049eabef7364a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6b1cc64d3fedbeb4fb0db9bffbe2cbb7, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2773,7 +2797,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 27a5a340b0c1be24da8049eabef7364a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: abb2eaea470b1a445b7f148977f4d63b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2977,7 +3001,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -3007,7 +3031,43 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 384004166}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 40302980}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 709470738}
+        m_TargetAssemblyTypeName: UnityEngine.EventSystems.EventSystem, UnityEngine.UI
+        m_MethodName: SetSelectedGameObject
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 144361375}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 407495506}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &384004166
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3064,7 +3124,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &407495507
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4445,6 +4505,7 @@ GameObject:
   - component: {fileID: 663356663}
   - component: {fileID: 663356662}
   - component: {fileID: 663356661}
+  - component: {fileID: 663356664}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -4526,6 +4587,50 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &663356664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 663356660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_AllowHDROutput: 1
+  m_UseScreenCoordOverride: 0
+  m_ScreenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_ScreenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
+  m_TaaSettings:
+    m_Quality: 3
+    m_FrameInfluence: 0.1
+    m_JitterScale: 1
+    m_MipBias: 0
+    m_VarianceClampScale: 0.9
+    m_ContrastAdaptiveSharpening: 0
 --- !u!1 &692700746
 GameObject:
   m_ObjectHideFlags: 0
@@ -4622,7 +4727,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 627944581}
+  m_FirstSelected: {fileID: 384004163}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!4 &709470739
@@ -4802,7 +4907,7 @@ MonoBehaviour:
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 1265139089}
-    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnLeft: {fileID: 1265139089}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
@@ -4954,6 +5059,16 @@ MonoBehaviour:
     PointsForThreeStars: 300
     CardColor: {r: 1, g: 0.47101063, b: 0, a: 1}
     Unlocked: 0
+  - FaseName: Fim
+    FaseTime: 5:00
+    FaseSprite: {fileID: 21300000, guid: 204adb6c486830b409d042d581c5d3f2, type: 3}
+    Description: 'Objetivo: Reprodizir e Entregar o Maximo de Peixes que puder Entregar
+      as 5 Especies de Peixes Obrigatorias'
+    SceneName: 
+    PointsForTwoStars: 250
+    PointsForThreeStars: 300
+    CardColor: {r: 1, g: 0.47101063, b: 0, a: 1}
+    Unlocked: 0
   FasesPos:
   - {fileID: 1853613311}
   - {fileID: 1330374618}
@@ -4965,6 +5080,10 @@ MonoBehaviour:
   - {fileID: 627944585}
   - {fileID: 944995658}
   - {fileID: 1265139089}
+  - {fileID: 767587310}
+  tutorials: []
+  tutorialButtons: []
+  _eventSystems: {fileID: 0}
   _faseNameText: {fileID: 158996097}
   _faseTimeText: {fileID: 248873971}
   _desctiptionText: {fileID: 1570769694}
@@ -5366,12 +5485,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 1
+    m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
+    m_SelectOnUp: {fileID: 627944585}
     m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
+    m_SelectOnLeft: {fileID: 627944585}
+    m_SelectOnRight: {fileID: 1265139089}
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
@@ -6890,7 +7009,7 @@ MonoBehaviour:
     m_SelectOnUp: {fileID: 767587310}
     m_SelectOnDown: {fileID: 944995658}
     m_SelectOnLeft: {fileID: 944995658}
-    m_SelectOnRight: {fileID: 0}
+    m_SelectOnRight: {fileID: 767587310}
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
@@ -10155,9 +10274,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Re\xFAna um macho e uma f\xEAmea da mesma esp\xE9cie em um tanque de reprodu\xE7\xE3o.
-    Ao finalizar, voc\xEA pontuar\xE1 e seus filhotes encontrar\xE3o um novo lar
-    no Bioparque Pantanal!"
+  m_text: "Ao finalizar, colete os peixes e entregue-os, voc\xEA pontuar\xE1 e seus
+    filhotes encontrar\xE3o um novo lar no Bioparque Pantanal! \n(Fique de olho nos
+    peixes obrigat\xF3rios no canto esquerdo da tela)"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d5e93fa7927ba8444adc442c4d9ca32b, type: 2}
   m_sharedMaterial: {fileID: 8801415281241580164, guid: d5e93fa7927ba8444adc442c4d9ca32b, type: 2}
@@ -10184,7 +10303,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 28.35
+  m_fontSize: 25.35
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1

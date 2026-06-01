@@ -2,6 +2,7 @@
 using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 [Serializable]
@@ -46,6 +47,9 @@ public class SelectFaseController : MonoBehaviour
     public Image PlayerIcon;
     public TransitionAsyncWithParticles TransitionAsyncWithParticles;
     [SerializeField] private Button[] _levelButtons;
+    [SerializeField] private GameObject[] tutorials;
+    [SerializeField] private Button[] tutorialButtons;
+    [SerializeField] private EventSystem _eventSystems;
 
     [Header("Configurações de Card")]
     [SerializeField] private TMP_Text _faseNameText;
@@ -147,8 +151,8 @@ public class SelectFaseController : MonoBehaviour
     void CheckPlayerPrefs(string faseName, int faseIndex)
     {
         string pointsKey = $"{faseName}_Points";
-        Debug.Log(pointsKey);
-        Debug.Log(PlayerPrefs.GetInt(pointsKey).ToString());
+      //  Debug.Log(pointsKey);
+       // Debug.Log(PlayerPrefs.GetInt(pointsKey).ToString());
         
         string objectiveKey = $"{faseName}_ObjectiveCompleted";
 
