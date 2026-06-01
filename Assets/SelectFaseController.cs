@@ -129,6 +129,7 @@ public class SelectFaseController : MonoBehaviour
     {
         CreatePlayerPrefsForFase(_sceneToLoad);
         TransitionAsyncWithParticles.LoadSceneAsync(_sceneToLoad);
+        AudioController.Instance.SoftAudioTransition("GameFase", 2f);
     }
 
     public void CreatePlayerPrefsForFase(string faseName)

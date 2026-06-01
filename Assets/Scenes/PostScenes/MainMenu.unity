@@ -215,6 +215,7 @@ GameObject:
   - component: {fileID: 24862579}
   - component: {fileID: 24862578}
   - component: {fileID: 24862581}
+  - component: {fileID: 24862582}
   m_Layer: 5
   m_Name: Start
   m_TagString: Untagged
@@ -298,6 +299,18 @@ MonoBehaviour:
           m_StringArgument: FaseSelection
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 3289898921655678954}
+        m_TargetAssemblyTypeName: AudioController, Assembly-CSharp
+        m_MethodName: PlaySFXAudio
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: ClickAudio
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &24862579
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -358,6 +371,35 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &24862582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 24862576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 9
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3289898921655678954}
+          m_TargetAssemblyTypeName: AudioController, Assembly-CSharp
+          m_MethodName: PlaySFXAudio
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: SelectAudio
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &28739477
 GameObject:
   m_ObjectHideFlags: 0
@@ -22449,6 +22491,7 @@ GameObject:
   - component: {fileID: 1237020571}
   - component: {fileID: 1237020573}
   - component: {fileID: 1237020574}
+  - component: {fileID: 1237020575}
   m_Layer: 5
   m_Name: Credits
   m_TagString: Untagged
@@ -22557,7 +22600,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1237020571}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1157697061}
+        m_TargetAssemblyTypeName: TransitionAsyncWithParticles, Assembly-CSharp
+        m_MethodName: LoadSceneAsync
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: CreditsFase
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 3289898921655678954}
+        m_TargetAssemblyTypeName: AudioController, Assembly-CSharp
+        m_MethodName: PlaySFXAudio
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: ClickAudio
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!95 &1237020574
 Animator:
   serializedVersion: 7
@@ -22580,6 +22647,35 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1237020575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1237020568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 9
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3289898921655678954}
+          m_TargetAssemblyTypeName: AudioController, Assembly-CSharp
+          m_MethodName: PlaySFXAudio
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: SelectAudio
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1246431863
 GameObject:
   m_ObjectHideFlags: 0
@@ -31594,6 +31690,7 @@ GameObject:
   - component: {fileID: 2009181088}
   - component: {fileID: 2009181090}
   - component: {fileID: 2009181091}
+  - component: {fileID: 2009181092}
   m_Layer: 5
   m_Name: EVERYONE GET IN THE CAR WERE LEAVING THIS TOWN NOW
   m_TagString: Untagged
@@ -31703,9 +31800,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 67028042}
-        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
-        m_MethodName: Close
+      - m_Target: {fileID: 67028044}
+        m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
+        m_MethodName: ExitGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -31713,6 +31810,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 3289898921655678954}
+        m_TargetAssemblyTypeName: AudioController, Assembly-CSharp
+        m_MethodName: PlaySFXAudio
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: ClickAudio
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!95 &2009181091
@@ -31737,6 +31846,35 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2009181092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2009181085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 9
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3289898921655678954}
+          m_TargetAssemblyTypeName: AudioController, Assembly-CSharp
+          m_MethodName: PlaySFXAudio
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: SelectAudio
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &2020359716
 GameObject:
   m_ObjectHideFlags: 0
@@ -38151,6 +38289,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 662d70fd8e2809b4aafa1a084c5c152a, type: 3}
+--- !u!114 &3289898921655678954 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4316765514571116625, guid: 662d70fd8e2809b4aafa1a084c5c152a, type: 3}
+  m_PrefabInstance: {fileID: 3289898921655678953}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 991f8e9de4906bf43bb91f6fc291ad67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &3290747448440564333
 Transform:
   m_ObjectHideFlags: 0

@@ -74,6 +74,38 @@ public class AudioController : MonoBehaviour
             Debug.LogWarning($"Audio clip with name '{audioName}' not found in AudioSystemScriptable.");
         }
     }
+    public void PlaySFXAudio(string audioName)
+    {
+        AudioClipData? audioData = GetSFXClipData(audioName);
+        if (audioData.HasValue)
+        {
+            AudioClipData data = audioData.Value;
+            AudioSource source = AudioSourceSFX;
+            if (source != null)
+            {
+                source.clip = data.Clip;
+                source.volume = data.Volume;
+                source.pitch = data.Pitch;
+                source.panStereo = data.StereoPan;
+                source.spatialBlend = data.SpatialBlend;
+                source.reverbZoneMix = data.ReverbZoneMix;
+                source.priority = (int)data.Priority;
+                source.loop = data.Loop;
+                if (data.PlayOnAwake)
+                {
+                    source.Play();
+                }
+            }
+        }
+        else
+        {
+            Debug.LogWarning($"Audio clip with name '{audioName}' not found in AudioSystemScriptable.");
+        }
+    }
+
+
+
+
 
     public void StopAudio(string audioName)
     {
@@ -262,6 +294,17 @@ public class AudioController : MonoBehaviour
     public AudioClipData? GetAudioClipData(string audioName)
     {
         foreach (AudioClipData audioData in audioSystemScriptable.AudiosDatas)
+        {
+            if (audioData.Name == audioName)
+            {
+                return audioData;
+            }
+        }
+        return null;
+    }
+    public AudioClipData? GetSFXClipData(string audioName)
+    {
+        foreach (AudioClipData audioData in audioSystemScriptable.SFXDatas)
         {
             if (audioData.Name == audioName)
             {

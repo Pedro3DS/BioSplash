@@ -14,28 +14,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AudiosDatas:
   - Name: MenuMusic
-    Clip: {fileID: 8300000, guid: fba9b66661157be4aba07ce2938cc789, type: 3}
+    Clip: {fileID: 8300000, guid: 02d9adb0dd0cc3b45b55a8ce16d87e33, type: 3}
     PlayOnAwake: 1
     Loop: 1
     Priority: 128
-    Volume: 1
+    Volume: 0.8
     Pitch: 1
     StereoPan: 0
     SpatialBlend: 0
     ReverbZoneMix: 1
   - Name: GameMusic
-    Clip: {fileID: 8300000, guid: 3015294d2df9af04c9f47eb17af8ea32, type: 3}
+    Clip: {fileID: 8300000, guid: 3e2a43e5464f6ab47bd16c853477ce47, type: 3}
     PlayOnAwake: 1
     Loop: 1
     Priority: 128
-    Volume: 1
+    Volume: 0.8
     Pitch: 1
     StereoPan: 0
     SpatialBlend: 0
     ReverbZoneMix: 1
   SFXDatas:
   - Name: ClickAudio
-    Clip: {fileID: 8300000, guid: 4bbecf97237c3ee4897f17d429689887, type: 3}
+    Clip: {fileID: 8300000, guid: 15e32b18b307c7446a1dbbd84cba0d6f, type: 3}
     PlayOnAwake: 1
     Loop: 0
     Priority: 128
@@ -45,7 +45,7 @@ MonoBehaviour:
     SpatialBlend: 0
     ReverbZoneMix: 1
   - Name: SelectAudio
-    Clip: {fileID: 8300000, guid: 95fba16fe97f5f6468c51055671ce744, type: 3}
+    Clip: {fileID: 8300000, guid: c220f39203ad88f40b4a8a6558e7d787, type: 3}
     PlayOnAwake: 1
     Loop: 0
     Priority: 128
