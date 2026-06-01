@@ -13,6 +13,7 @@ public class TransitionAsyncWithParticles : MonoBehaviour
 
     [SerializeField] private bool _loadSceneOnStart = false;
     [SerializeField] private bool _dontDestroyOnLoad = false;
+    [SerializeField] private bool _fadeOut = false;
 
     [SerializeField] private Image fadeImage;
 
@@ -26,12 +27,48 @@ public class TransitionAsyncWithParticles : MonoBehaviour
         }
     }
 
+    void Start()
+    {
+        if (_fadeOut)
+        {
+            FadeOut();
+        }
+    }
+
     public void LoadSceneAsync(string sceneName)
     {
         if(_isTransitioning) return;
         _isTransitioning = true;
-        _transitionParticles.Play();
+        // _transitionParticles.Play();
         StartCoroutine(LoadSceneAsyncWithFade(sceneName, _transitionDuration, fadeImage));
+    }
+
+    public void FadeOut()
+    {
+        if(_isTransitioning) return;
+        _isTransitioning = true;
+        // _transitionParticles.Play();
+        StartCoroutine(FadeOutAndLoadScene(_transitionDuration, fadeImage));
+    }
+
+    IEnumerator FadeOutAndLoadScene( float duration, Image fadeImage)
+    {
+        float elapsedTime = 0f;
+        Color initialColor = fadeImage.color;
+        Color targetColor = new Color(initialColor.r, initialColor.g, initialColor.b, 0f);
+
+        while (elapsedTime < duration)
+        {
+            elapsedTime += Time.deltaTime;
+            float t = Mathf.Clamp01(elapsedTime / duration);
+            fadeImage.color = Color.Lerp(initialColor, targetColor, t);
+            yield return null;
+        }
+        _isTransitioning = false;
+
+        // Optionally, you can add a fade-out effect here after the scene has loaded
+        // _transitionParticles.Stop(); // Stop the particle system from looping
+
     }
 
     IEnumerator LoadSceneAsyncWithFade(string sceneName, float duration, Image fadeImage)
@@ -54,9 +91,9 @@ public class TransitionAsyncWithParticles : MonoBehaviour
         {
             yield return null;
         }
-
+    _isTransitioning = false;
         // Optionally, you can add a fade-out effect here after the scene has loaded
-        _transitionParticles.Stop(); // Stop the particle system from looping
+        // _transitionParticles.Stop(); // Stop the particle system from looping
 
     }
 

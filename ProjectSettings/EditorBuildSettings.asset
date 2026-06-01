@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/PostScenes/MainMenu.unity
     guid: 18f9d86488a99b142b3d34dd7349d3ac
   - enabled: 1
+    path: Assets/Scenes/PostScenes/FaseSelection.unity
+    guid: 819c20ec4c93b614a886713f24492680
+  - enabled: 1
     path: Assets/Scenes/PostScenes/Level1.unity
     guid: ba7f49ca2d524214da5ce5885300b6be
   - enabled: 1

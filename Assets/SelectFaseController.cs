@@ -1,5 +1,6 @@
 // using Unity.VisualScripting;
 using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,20 +8,155 @@ using UnityEngine.UI;
 public struct FaseCardInfos
 {
     public string FaseName;
-    public float FaseTime;
+    public string FaseTime;
 
     public Sprite FaseSprite;
-
+    [TextArea(2, 5)]
     public string Description;
+    public string SceneName;
+
+    public int PointsForTwoStars;
+
+    public Color CardColor;
 }
 
+
+/// <summary>
+/// Esse script funcionara assim, Terão Pontos/Botões no mapa referentes as fases.
+/// Quando esse ponto/Botão for Selected, Eles vão Alterar o card de informações(Nome da Fase, Tempo, Imagem, Descrição)
+/// Nesse Card, Tem o Campo De Estrelas
+/// Quando ENtrar na fase com o respectivo card,Vai ser criado dois PLayer Prefs, se ja ouver, não ira criar;
+/// Um player pref São os pontos que ele pegou, e um player pref bool para saber se o Objetivo for concluido;
+/// Se apenas o objetivo for concluido, Ele ganha uma estrela
+/// se ele só tiver pontos, tera um calculo para saber se eles conseguiram os pontos nescessarios para 2 estrelas
+/// ex: 100 pontos = 1 estrela
+///     250 pontos = 2 estrelas
+///     250 pontos + Objetivo = 3 Estrelas
+///     Obs: Preciso ter o controle publico sobre esses valores 
+/// </summary>
 
 public class SelectFaseController : MonoBehaviour
 {
     [SerializeField] private FaseCardInfos[] _fasesInfos;
 
     public FaseCardInfos[] FasesInfos => _fasesInfos;
+    public RectTransform[] FasesPos;
+    public Image PlayerIcon;
+    public TransitionAsyncWithParticles TransitionAsyncWithParticles;
+
+    [Header("Configurações de Card")]
+    [SerializeField] private TMP_Text _faseNameText;
+    [SerializeField] private TMP_Text _faseTimeText;
+    [SerializeField] private TMP_Text _desctiptionText;
+    [SerializeField] private Image _faseImage;
+    [SerializeField] private Image _cardImage;
+
+    [Header("Configurações de Estrelas")]
+    [SerializeField] private Sprite _starFilledSprite;
+    [SerializeField] private Sprite _starEmptySprite;
+    [SerializeField] private Image[] _starImages; // Array de imagens para as estrelas
+
+    private int _currentFaseIndex = 0;
+
+    [SerializeField] private string _sceneToLoad;
 
 
-    [SerializeField] private Button[] _faseButtons;
+    public void SetFaseCardInfos(int index)
+    {
+        if (index < 0 || index >= _fasesInfos.Length)
+        {
+            Debug.LogError("Index fora do intervalo das fases disponíveis.");
+            return;
+        }
+
+        FaseCardInfos selectedFase = _fasesInfos[index];
+        _currentFaseIndex = index;
+        _sceneToLoad = selectedFase.SceneName;
+        UpdateFaseCardUI(selectedFase);
+        UpdatePlayerIconPosition(index);
+    }
+
+    public void UpdatePlayerIconPosition(int index)
+    {
+        if (index < 0 || index >= FasesPos.Length)
+        {
+            Debug.LogError("Index fora do intervalo das posições disponíveis.");
+            return;
+        }
+
+        PlayerIcon.rectTransform.position = FasesPos[index].position;
+    }
+
+    void UpdateFaseCardUI(FaseCardInfos faseInfo)
+    {
+        _faseNameText.text = faseInfo.FaseName;
+        _faseTimeText.text = faseInfo.FaseTime.ToString();
+        _desctiptionText.text = faseInfo.Description;
+        _faseImage.sprite = faseInfo.FaseSprite;
+        _cardImage.color = faseInfo.CardColor;
+
+        CheckPlayerPrefs(faseInfo.FaseName, Array.IndexOf(_fasesInfos, faseInfo));
+    }
+
+    public void LoadCurrentFaseScene()
+    {
+        CreatePlayerPrefsForFase(_sceneToLoad);
+        TransitionAsyncWithParticles.LoadSceneAsync(_sceneToLoad);
+    }
+
+    public void CreatePlayerPrefsForFase(string faseName)
+    {
+        string pointsKey = $"{faseName}_Points";
+        string objectiveKey = $"{faseName}_ObjectiveCompleted";
+
+        if (!PlayerPrefs.HasKey(pointsKey))
+            PlayerPrefs.SetInt(pointsKey, 0);
+
+        if (!PlayerPrefs.HasKey(objectiveKey))
+            PlayerPrefs.SetInt(objectiveKey, 0);
+    }
+
+    void CheckPlayerPrefs(string faseName, int faseIndex)
+    {
+        string pointsKey = $"{faseName}_Points";
+        string objectiveKey = $"{faseName}_ObjectiveCompleted";
+
+        if (PlayerPrefs.HasKey(pointsKey) && PlayerPrefs.HasKey(objectiveKey))
+        {
+            int points = PlayerPrefs.GetInt(pointsKey);
+            bool objectiveCompleted = PlayerPrefs.GetInt(objectiveKey) == 1;
+
+            // Supondo que o índice da fase atual seja 0, você pode ajustar conforme necessário
+            int pointsForTwoStars = _fasesInfos[faseIndex].PointsForTwoStars;
+
+            UpdateCardStars(points, objectiveCompleted, pointsForTwoStars);
+        }
+        else
+        {
+            int pointsForTwoStars = _fasesInfos[faseIndex].PointsForTwoStars;
+            UpdateCardStars(0, false, pointsForTwoStars);
+        }
+
+    }
+
+    void UpdateCardStars(int points, bool objectiveCompleted, int pointsForTwoStars)
+    {
+        int starsEarned = 0;
+
+        if (objectiveCompleted)
+            starsEarned++;
+
+        if (points >= pointsForTwoStars) // Supondo que o primeiro elemento do array seja a fase atual
+            starsEarned++;
+
+        for (int i = 0; i < _starImages.Length; i++)
+        {
+            if (i < starsEarned)
+                _starImages[i].sprite = _starFilledSprite;
+            else
+                _starImages[i].sprite = _starEmptySprite;
+        }
+    }
+
+
 }

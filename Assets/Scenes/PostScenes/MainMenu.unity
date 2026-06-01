@@ -298,18 +298,6 @@ MonoBehaviour:
           m_StringArgument: FaseSelection
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 276159834}
-        m_TargetAssemblyTypeName: TransitionAsyncWithParticles, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &24862579
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22161,7 +22149,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1157697056}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
   m_Name: 
@@ -22203,9 +22191,9 @@ Canvas:
   m_GameObject: {fileID: 1157697056}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 1
+  m_RenderMode: 0
   m_Camera: {fileID: 183027229}
-  m_PlaneDistance: 5.09
+  m_PlaneDistance: 0.26
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
@@ -22215,7 +22203,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 7
   m_TargetDisplay: 0
 --- !u!224 &1157697060
 RectTransform:
@@ -22254,7 +22242,8 @@ MonoBehaviour:
   _transitionDuration: 1
   _sceneToLoad: 
   _loadSceneOnStart: 0
-  _dontDestroyOnLoad: 1
+  _dontDestroyOnLoad: 0
+  _fadeOut: 1
   fadeImage: {fileID: 1709125075}
 --- !u!1 &1162435995
 GameObject:
@@ -25241,8 +25230,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.16078432, g: 0.18823531, b: 0.3137255, a: 0}
-  m_RaycastTarget: 1
+  m_Color: {r: 0.16078432, g: 0.18823531, b: 0.3137255, a: 1}
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
