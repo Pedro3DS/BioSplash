@@ -16,8 +16,10 @@ public struct FaseCardInfos
     public string SceneName;
 
     public int PointsForTwoStars;
+    public int PointsForThreeStars;
 
     public Color CardColor;
+    public bool Unlocked;
 }
 
 
@@ -43,6 +45,7 @@ public class SelectFaseController : MonoBehaviour
     public RectTransform[] FasesPos;
     public Image PlayerIcon;
     public TransitionAsyncWithParticles TransitionAsyncWithParticles;
+    [SerializeField] private Button[] _levelButtons;
 
     [Header("Configurações de Card")]
     [SerializeField] private TMP_Text _faseNameText;
@@ -60,6 +63,10 @@ public class SelectFaseController : MonoBehaviour
 
     [SerializeField] private string _sceneToLoad;
 
+    private void Start()
+    {
+        CheckButtons();
+    }
 
     public void SetFaseCardInfos(int index)
     {
@@ -83,8 +90,28 @@ public class SelectFaseController : MonoBehaviour
             Debug.LogError("Index fora do intervalo das posições disponíveis.");
             return;
         }
-
+        
         PlayerIcon.rectTransform.position = FasesPos[index].position;
+    }
+
+    public void CheckButtons()
+    {
+
+        for (int i = 0; i < _fasesInfos.Length; i++)
+        {
+            if (i == 0)
+            {
+                _levelButtons[i].interactable = true;
+            }
+            else if (PlayerPrefs.HasKey($"Level{i}_ObjectiveCompleted"))
+            {
+                _levelButtons[i].interactable = PlayerPrefs.GetInt($"Level{i}_ObjectiveCompleted") == 1;
+            }
+            else
+            {
+                _levelButtons[i].interactable = false;
+            }
+        }
     }
 
     void UpdateFaseCardUI(FaseCardInfos faseInfo)
@@ -95,7 +122,7 @@ public class SelectFaseController : MonoBehaviour
         _faseImage.sprite = faseInfo.FaseSprite;
         _cardImage.color = faseInfo.CardColor;
 
-        CheckPlayerPrefs(faseInfo.FaseName, Array.IndexOf(_fasesInfos, faseInfo));
+        CheckPlayerPrefs(faseInfo.SceneName, Array.IndexOf(_fasesInfos, faseInfo));
     }
 
     public void LoadCurrentFaseScene()
@@ -119,6 +146,9 @@ public class SelectFaseController : MonoBehaviour
     void CheckPlayerPrefs(string faseName, int faseIndex)
     {
         string pointsKey = $"{faseName}_Points";
+        Debug.Log(pointsKey);
+        Debug.Log(PlayerPrefs.GetInt(pointsKey).ToString());
+        
         string objectiveKey = $"{faseName}_ObjectiveCompleted";
 
         if (PlayerPrefs.HasKey(pointsKey) && PlayerPrefs.HasKey(objectiveKey))
@@ -128,25 +158,29 @@ public class SelectFaseController : MonoBehaviour
 
             // Supondo que o índice da fase atual seja 0, você pode ajustar conforme necessário
             int pointsForTwoStars = _fasesInfos[faseIndex].PointsForTwoStars;
-
-            UpdateCardStars(points, objectiveCompleted, pointsForTwoStars);
+            int pointsForThreeStars = _fasesInfos[faseIndex].PointsForThreeStars;
+            UpdateCardStars(points, objectiveCompleted, pointsForTwoStars, pointsForThreeStars);
         }
         else
         {
             int pointsForTwoStars = _fasesInfos[faseIndex].PointsForTwoStars;
-            UpdateCardStars(0, false, pointsForTwoStars);
+            int pointsForThreeStars = _fasesInfos[faseIndex].PointsForThreeStars;
+            UpdateCardStars(0, false, pointsForTwoStars, pointsForThreeStars);
         }
 
     }
 
-    void UpdateCardStars(int points, bool objectiveCompleted, int pointsForTwoStars)
+    void UpdateCardStars(int points, bool objectiveCompleted, int pointsForTwoStars, int pointsForThreeStars)
     {
+        Debug.Log(points);
         int starsEarned = 0;
 
         if (objectiveCompleted)
             starsEarned++;
 
         if (points >= pointsForTwoStars) // Supondo que o primeiro elemento do array seja a fase atual
+            starsEarned++;
+        if (points >= pointsForThreeStars)
             starsEarned++;
 
         for (int i = 0; i < _starImages.Length; i++)

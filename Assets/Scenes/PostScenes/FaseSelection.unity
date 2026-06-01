@@ -395,6 +395,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 9caa3d8a-6b2f-4e8e-8bad-6ede561bd9be
     m_ActionName: UI/TrackedDeviceOrientation
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: e48f7037-6825-463d-806c-aafefc0637f0
+    m_ActionName: Player/Select
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Gamepad
   m_DefaultActionMap: Player
@@ -2094,29 +2098,39 @@ MonoBehaviour:
       as 4 Especies de Peixes Obrigatorias'
     SceneName: Level1
     PointsForTwoStars: 250
+    PointsForThreeStars: 300
     CardColor: {r: 0, g: 0.6117647, b: 1, a: 1}
+    Unlocked: 0
   - FaseName: Fase 2
     FaseTime: 4:00
     FaseSprite: {fileID: 21300000, guid: 204adb6c486830b409d042d581c5d3f2, type: 3}
     Description: 'Objetivo: Reprodizir e Entregar o Maximo de Peixes que puder Entregar
       as 3 Especies de Peixes Obrigatorias'
-    SceneName: Level1
+    SceneName: Level2
     PointsForTwoStars: 250
+    PointsForThreeStars: 300
     CardColor: {r: 0, g: 0.29780227, b: 0.4867924, a: 1}
+    Unlocked: 0
   - FaseName: Fase 3
     FaseTime: 5:00
     FaseSprite: {fileID: 21300000, guid: 204adb6c486830b409d042d581c5d3f2, type: 3}
     Description: 'Objetivo: Reprodizir e Entregar o Maximo de Peixes que puder Entregar
       as 5 Especies de Peixes Obrigatorias'
-    SceneName: Level1
+    SceneName: Level3
     PointsForTwoStars: 250
+    PointsForThreeStars: 300
     CardColor: {r: 1, g: 0.47101063, b: 0, a: 1}
+    Unlocked: 0
   FasesPos:
   - {fileID: 1853613311}
   - {fileID: 1330374618}
   - {fileID: 294459351}
   PlayerIcon: {fileID: 1004715546}
   TransitionAsyncWithParticles: {fileID: 56062657}
+  _levelButtons:
+  - {fileID: 627944585}
+  - {fileID: 944995658}
+  - {fileID: 1265139089}
   _faseNameText: {fileID: 158996097}
   _faseTimeText: {fileID: 248873971}
   _desctiptionText: {fileID: 1570769694}
