@@ -28,7 +28,8 @@ public class DeliverySlot : MonoBehaviour, IInteractable
                 }
             }
         }
-        ScoreManager.instance.AddScore(box.scoreValue);
+        FloatingNumbers.instance.CreateFloatingNumber(box.scoreValue, transform.position, Color.green);
+        // ScoreManager.instance.AddScore(box.scoreValue);
         Destroy(box.gameObject);
     }
     public void Interact(PlayerMovement player) => ReceiveBox(player);
