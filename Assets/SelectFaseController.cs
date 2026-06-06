@@ -67,6 +67,7 @@ public class SelectFaseController : MonoBehaviour
 
     [SerializeField] private string _sceneToLoad;
 
+
     private void Start()
     {
         CheckButtons();
@@ -106,11 +107,15 @@ public class SelectFaseController : MonoBehaviour
             if (i == 0)
             {
                 _levelButtons[i].interactable = true;
-            }
-            else if (PlayerPrefs.HasKey($"Level{i}_ObjectiveCompleted"))
+            } else if (PlayerPrefs.HasKey($"Level{i}_Points") && PlayerPrefs.HasKey($"Level{i}_ObjectiveCompleted"))
             {
-                _levelButtons[i].interactable = PlayerPrefs.GetInt($"Level{i}_ObjectiveCompleted") == 1;
-            }
+                if (PlayerPrefs.GetInt($"Level{i}_Points") >= _fasesInfos[i].PointsForTwoStars || PlayerPrefs.GetInt($"Level{i}_ObjectiveCompleted") == 1)
+                {
+                    _levelButtons[i].interactable = true;
+                }
+  
+                }
+             
             else
             {
                 _levelButtons[i].interactable = false;
@@ -133,7 +138,7 @@ public class SelectFaseController : MonoBehaviour
     {
         CreatePlayerPrefsForFase(_sceneToLoad);
         TransitionAsyncWithParticles.LoadSceneAsync(_sceneToLoad);
-        AudioController.Instance.SoftAudioTransition("GameFase", 2f);
+        AudioController.Instance.SoftAudioTransition("GameMusic", 2.5f);
     }
 
     public void CreatePlayerPrefsForFase(string faseName)

@@ -78,13 +78,14 @@ public class ScoreManager : MonoBehaviour
     {
         string pointsKey = $"{SceneManager.GetActiveScene().name}_Points";
         Debug.Log(pointsKey);
-        loseScoreText.text = "Pontua��o: " + score.ToString();
-        winScoreText.text = "Pontua��o: " + score.ToString();
+        loseScoreText.text = "Pontuação: " + score.ToString();
+        winScoreText.text = "Pontuação: " + score.ToString();
+        PlayerPrefs.SetInt(pointsKey, score);
         if (score > PlayerPrefs.GetInt(SceneManager.GetActiveScene().name + "hiscore"))
         {
             PlayerPrefs.SetInt(SceneManager.GetActiveScene().name + "hiscore", score);
-            PlayerPrefs.SetInt(pointsKey, score);
-            Debug.Log(PlayerPrefs.GetInt(pointsKey).ToString());
+            
+           //Debug.Log(PlayerPrefs.GetInt(pointsKey).ToString());
 
         }
         hiScoreText.text = "Mais alta: " + PlayerPrefs.GetInt(SceneManager.GetActiveScene().name + "hiscore").ToString();

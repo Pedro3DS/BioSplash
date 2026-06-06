@@ -7,6 +7,7 @@ public class DeliverySlot : MonoBehaviour, IInteractable
 
     public void ReceiveBox(PlayerMovement player)
     {
+        if(AudioController.Instance) AudioController.Instance.PlaySFXAudio("CompleteAudio");
        FishBox box = player.grabbedObj.GetComponent<FishBox>();
        
         player.DropObject();

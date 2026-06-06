@@ -52,7 +52,7 @@ public class AudioController : MonoBehaviour
         if (audioData.HasValue)
         {
             AudioClipData data = audioData.Value;
-            AudioSource source = GetAudioSourceForClip(data);
+            AudioSource source = AudioSourceMusic;
             if (source != null)
             {
                 source.clip = data.Clip;
@@ -206,9 +206,18 @@ public class AudioController : MonoBehaviour
         if (audioData.HasValue)
         {
             AudioClipData data = audioData.Value;
-            AudioSource source = GetAudioSourceForClip(data);
+            AudioSource source = AudioSourceMusic;
+            
             if (source != null)
             {
+                source.clip = data.Clip;
+                source.volume = data.Volume;
+                source.pitch = data.Pitch;
+                source.panStereo = data.StereoPan;
+                source.spatialBlend = data.SpatialBlend;
+                source.reverbZoneMix = data.ReverbZoneMix;
+                source.priority = (int)data.Priority;
+                source.loop = data.Loop;
                 StartCoroutine(FadeAudio(source, data.Clip, data.Volume, fadeDuration));
             }
         }

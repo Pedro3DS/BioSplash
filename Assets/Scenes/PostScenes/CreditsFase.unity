@@ -6464,10 +6464,10 @@ MonoBehaviour:
   m_Navigation:
     m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 858628185}
-    m_SelectOnDown: {fileID: 0}
+    m_SelectOnUp: {fileID: 1265139089}
+    m_SelectOnDown: {fileID: 858628185}
     m_SelectOnLeft: {fileID: 1265139089}
-    m_SelectOnRight: {fileID: 0}
+    m_SelectOnRight: {fileID: 858628185}
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
@@ -7096,22 +7096,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _fasesInfos:
   - Name: Pedro Diniz Santana
-    Description: Programador & Desenvolvedor de Mecanicas e UI
+    Description: "Desenvolvedor de mec\xE2nicas e UI"
     DevSprite: {fileID: 21300000, guid: 963053eda37db25479e993878ebe65b6, type: 3}
     LittleDevIcon: {fileID: 21300000, guid: 00c1ee4b992d9c247999af14dff10aba, type: 3}
     HasLinearEffect: 1
-  - Name: Samuel
-    Description: Modelador 3D & SFX Designer
+  - Name: Samuel Ferreira
+    Description: Artista 3D e Sound  Effects Designer
     DevSprite: {fileID: 21300000, guid: 94b858c8ab69390429820fbb548f2f72, type: 3}
     LittleDevIcon: {fileID: 21300000, guid: 6b1dc9de21d40b8428a74a33ad750045, type: 3}
     HasLinearEffect: 1
-  - Name: Henrique
-    Description: "Programador & Desenvolvedor de Mec\xE2nicas"
+  - Name: Henrique Salgado
+    Description: "Desenvolvedor de mec\xE2nicas"
     DevSprite: {fileID: 21300000, guid: 2c491b611ed0cdc45b456c3d68676334, type: 3}
     LittleDevIcon: {fileID: 21300000, guid: e9ee00069939a9840bf2edbf02ca8bf1, type: 3}
     HasLinearEffect: 1
-  - Name: Cristiano
-    Description: "Artista 2D & M\xFAsico"
+  - Name: Cristiano Escobar
+    Description: Artista e Compositor
     DevSprite: {fileID: 21300000, guid: 6ac26c636122fbd4f8c25a9c1e14c180, type: 3}
     LittleDevIcon: {fileID: 21300000, guid: 6b74fd71676ee1849b69d73a9303aa8b, type: 3}
     HasLinearEffect: 1
@@ -7123,7 +7123,7 @@ MonoBehaviour:
     LittleDevIcon: {fileID: 21300000, guid: 27e9d1e770cfd2e4db34b084a4bb1e10, type: 3}
     HasLinearEffect: 0
   - Name: Maikin
-    Description: "Men\xE7\xE3o Honrosa ao Nosso Companheiro Maikin\n"
+    Description: "Men\xE7\xE3o Honrosa ao Nosso Companheiro e Tester, Maikin\n"
     DevSprite: {fileID: 21300000, guid: b94c073a73959c046b96bf36e08f9883, type: 3}
     LittleDevIcon: {fileID: 21300000, guid: 27e9d1e770cfd2e4db34b084a4bb1e10, type: 3}
     HasLinearEffect: 1
@@ -7373,10 +7373,10 @@ MonoBehaviour:
   m_Navigation:
     m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 1140453213}
-    m_SelectOnDown: {fileID: 542774529}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
+    m_SelectOnUp: {fileID: 542774529}
+    m_SelectOnDown: {fileID: 1140453213}
+    m_SelectOnLeft: {fileID: 542774529}
+    m_SelectOnRight: {fileID: 1140453213}
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
@@ -10029,6 +10029,88 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1482598398
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1482598399}
+  - component: {fileID: 1482598400}
+  m_Layer: 0
+  m_Name: PlayerManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1482598399
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1482598398}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -473, y: 326, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1620337917}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1482598400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1482598398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc34d17e3c548c3418a1869dc170edf8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  p1: {fileID: 0}
+  p2: {fileID: 0}
+  p1Event: {fileID: 0}
+  playerModel1: {fileID: 0}
+  playerModel2: {fileID: 0}
+  playerPoint1: {fileID: 1484994486}
+  playerPoint2: {fileID: 1484994486}
+--- !u!1 &1484994485
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1484994486}
+  m_Layer: 0
+  m_Name: PlayerPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1484994486
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1484994485}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 301.08127, y: 1026.0062, z: -133.39969}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1507239068
 GameObject:
   m_ObjectHideFlags: 0
@@ -10601,6 +10683,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 785762419}
+  - {fileID: 1482598399}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1664938430
@@ -11095,7 +11178,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 27a5a340b0c1be24da8049eabef7364a, type: 3}
   m_Type: 0
-  m_PreserveAspect: 1
+  m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -11401,7 +11484,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.023529414, g: 0.39607847, b: 0.72156864, a: 0}
+  m_Color: {r: 0.023529414, g: 0.39607847, b: 0.72156864, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -11937,3 +12020,4 @@ SceneRoots:
   - {fileID: 56062655}
   - {fileID: 1791319392}
   - {fileID: 709470739}
+  - {fileID: 1484994486}

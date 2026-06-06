@@ -49,10 +49,12 @@ public class PlayerManager : MonoBehaviour
     {
         if (p1 != null && p2 != null && !p1.GetComponent<PlayerMovement>().modelReady && !p2.GetComponent<PlayerMovement>().modelReady)
         {
-            Instantiate(playerModel1, p1.transform);
-            Instantiate(playerModel2, p2.transform);
+          GameObject p1model =  Instantiate(playerModel1, p1.transform);
+           GameObject p2model = Instantiate(playerModel2, p2.transform);
             p1.transform.position = playerPoint1.position;
             p2.transform.position = playerPoint2.position;
+            p1model.transform.position = p1.transform.position;
+           p2model.transform.position = p2.transform.position;
             p1.GetComponent<PlayerMovement>().modelReady = true;
             p2.GetComponent<PlayerMovement>().modelReady = true;
         }
