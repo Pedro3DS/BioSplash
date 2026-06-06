@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a43661bf58e84ab45a064a915fbbdde1, type: 3}
+  m_Name: AudioSystemScriptable
+  m_EditorClassIdentifier: 
+  AudiosDatas:
+  - Name: MenuMusic
+    Clip: {fileID: 8300000, guid: 02d9adb0dd0cc3b45b55a8ce16d87e33, type: 3}
+    PlayOnAwake: 1
+    Loop: 1
+    Priority: 128
+    Volume: 0.8
+    Pitch: 1
+    StereoPan: 0
+    SpatialBlend: 0
+    ReverbZoneMix: 1
+  - Name: GameMusic
+    Clip: {fileID: 8300000, guid: 3e2a43e5464f6ab47bd16c853477ce47, type: 3}
+    PlayOnAwake: 1
+    Loop: 1
+    Priority: 128
+    Volume: 0.8
+    Pitch: 1
+    StereoPan: 0
+    SpatialBlend: 0
+    ReverbZoneMix: 1
+  SFXDatas:
+  - Name: ClickAudio
+    Clip: {fileID: 8300000, guid: 15e32b18b307c7446a1dbbd84cba0d6f, type: 3}
+    PlayOnAwake: 1
+    Loop: 0
+    Priority: 128
+    Volume: 1
+    Pitch: 1
+    StereoPan: 0
+    SpatialBlend: 0
+    ReverbZoneMix: 1
+  - Name: SelectAudio
+    Clip: {fileID: 8300000, guid: c220f39203ad88f40b4a8a6558e7d787, type: 3}
+    PlayOnAwake: 1
+    Loop: 0
+    Priority: 128
+    Volume: 1
+    Pitch: 1
+    StereoPan: 0
+    SpatialBlend: 0
+    ReverbZoneMix: 1
+  - Name: CompleteAudio
+    Clip: {fileID: 8300000, guid: 0c91f023a352b31428ecae0fe48cded8, type: 3}
+    PlayOnAwake: 1
+    Loop: 0
+    Priority: 128
+    Volume: 1
+    Pitch: 1
+    StereoPan: 0
+    SpatialBlend: 0
+    ReverbZoneMix: 1
+  AmbientDatas: []
+  UIDatas: []
+  VoiceDatas: []
+  DistantLocationsDatas: []

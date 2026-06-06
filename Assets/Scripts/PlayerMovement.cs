@@ -17,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
     public GameObject grabbedObj;
     public bool hasObject;
     public bool movementDisabled = true;
+    public bool modelReady;
 
 
     private void OnEnable()

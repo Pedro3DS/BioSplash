@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 public class SceneChanger : MonoBehaviour
@@ -23,5 +24,21 @@ public class SceneChanger : MonoBehaviour
     public void ReloadScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void LoadByPlayerInput(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            LoadScene(SceneManager.GetActiveScene().name);
+        }
+    }
+
+
+    public void ExitGame()
+    {
+        PlayerPrefs.DeleteAll();
+        Application.Quit();
+
     }
 }

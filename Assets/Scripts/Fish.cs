@@ -1,10 +1,11 @@
+using System.Text.RegularExpressions;
 using Unity.VisualScripting;
 using UnityEngine;
 
 public class Fish : MonoBehaviour
 {
     public Fishdata fishData;
-    private  GameObject genderImage;
+    private GameObject genderImage;
     private GameObject registImage;
     public bool registered;
     public int baseScore = 5;
@@ -19,9 +20,9 @@ public class Fish : MonoBehaviour
     {
         fishData = data;
         Debug.Log((int)fishData.type);
-      genderImage =  Instantiate(SpriteManager.instance.genderPrefabs[((int)fishData.gender)], infoCanvas.transform);
+        genderImage = Instantiate(SpriteManager.instance.genderPrefabs[((int)fishData.gender)], infoCanvas.transform);
         registImage = Instantiate(SpriteManager.instance.registerPrefabs[0], infoCanvas.transform);
-       GameObject fishMesh = Instantiate(data.MeshPrefab, this.gameObject.transform);
+        GameObject fishMesh = Instantiate(data.MeshPrefab, this.gameObject.transform);
         fishMesh.transform.position = this.gameObject.transform.position;
         timer = freshnessLeeway;
     }
@@ -55,8 +56,25 @@ public class Fish : MonoBehaviour
 
     public void Register()
     {
-        registered = true;
-        Destroy(registImage);
-        registImage = Instantiate(SpriteManager.instance.registerPrefabs[1], infoCanvas.transform);
+        if (!registered)
+        {
+            registered = true;
+            Destroy(registImage);
+            registImage = Instantiate(SpriteManager.instance.registerPrefabs[1], infoCanvas.transform);
+            if (timer <= 0)
+            {
+                // ScoreManager.instance.AddScore(1);
+                FloatingNumbers.instance.CreateFloatingNumber(1, transform.position, Color.yellow);
+            }
+            else
+            {
+                // ScoreManager.instance.AddScore(2);
+
+                FloatingNumbers.instance.CreateFloatingNumber(1, transform.position, Color.blue);
+                FloatingNumbers.instance.CreateFloatingNumber(1, transform.position, Color.green);
+                if (Random.Range(0f, 1f) < 0.5f)
+                    FloatingNumbers.instance.CreateFloatingNumber(1, transform.position, Color.cyan);
+            }
+        }
     }
 }

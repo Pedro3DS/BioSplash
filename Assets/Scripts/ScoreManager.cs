@@ -1,3 +1,4 @@
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -8,6 +9,7 @@ public class ScoreManager : MonoBehaviour
 
     [SerializeField] TextMeshProUGUI scoreText, loseScoreText, winScoreText, hiScoreText;
     int score = 0;
+    private Coroutine _pointAnimCoroutine;
 
     private void Awake()
     {
@@ -39,20 +41,52 @@ public class ScoreManager : MonoBehaviour
         return added;
     }
 
+    public void UpdateScoreLerpAndPopAnimation(int value)
+    {
+        // StartCoroutine(LerpScoreText(value));
+        if (_pointAnimCoroutine != null)
+            StopCoroutine(_pointAnimCoroutine);
+
+        _pointAnimCoroutine = StartCoroutine(PopTextAnimation());
+    }
+    IEnumerator PopTextAnimation()
+    {
+        Vector3 originalScale = scoreText.transform.localScale;
+        Vector3 targetScale = originalScale * 1.5f;
+        float duration = 0.3f;
+        float elapsed = 0f;
+
+        while (elapsed < duration)
+        {
+            scoreText.transform.localScale = Vector3.Lerp(originalScale, targetScale, elapsed / duration);
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        scoreText.transform.localScale = originalScale;
+    }
+
+
     public void AddScore(int value)
     {
-        
+        // PopTextAnimation();
         score += value;
         scoreText.text = score.ToString();
     }
 
     public void FinalScore()
     {
-        loseScoreText.text = "Pontuação: " + score.ToString();
-        winScoreText.text = "Pontuação: " + score.ToString();
+        string pointsKey = $"{SceneManager.GetActiveScene().name}_Points";
+        Debug.Log(pointsKey);
+        loseScoreText.text = "PontuaÃ§Ã£o: " + score.ToString();
+        winScoreText.text = "PontuaÃ§Ã£o: " + score.ToString();
+        PlayerPrefs.SetInt(pointsKey, score);
         if (score > PlayerPrefs.GetInt(SceneManager.GetActiveScene().name + "hiscore"))
         {
             PlayerPrefs.SetInt(SceneManager.GetActiveScene().name + "hiscore", score);
+            
+           //Debug.Log(PlayerPrefs.GetInt(pointsKey).ToString());
+
         }
         hiScoreText.text = "Mais alta: " + PlayerPrefs.GetInt(SceneManager.GetActiveScene().name + "hiscore").ToString();
     }

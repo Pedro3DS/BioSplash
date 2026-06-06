@@ -22,7 +22,7 @@ public class OrderSystem : MonoBehaviour
         }
         else
         {
-            Destroy(gameObject);
+            // Destroy(gameObject);
         }
     }
     private void Start()

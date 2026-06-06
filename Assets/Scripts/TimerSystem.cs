@@ -125,12 +125,13 @@ public class TimerSystem : MonoBehaviour
     }
     public void EndSegment() 
     {
+        string objectiveKey = $"{SceneManager.GetActiveScene().name}_ObjectiveCompleted";
         EndTextCanvas.SetActive(false);
         if (OrderSystem.instance.ordersComplete)
         {
             WinScreen.SetActive(true);
             PlayerManager.Instance.ITooCanMakeNavigationJumps(WinScreen.GetComponentInChildren<Button>().gameObject);
-
+            PlayerPrefs.SetInt(objectiveKey, 1);
         } else
         {
             EndScreen.SetActive(true);
